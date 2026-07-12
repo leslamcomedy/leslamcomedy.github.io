@@ -195,3 +195,8 @@
 .dark .VPHome .VPHero .text {
   color: #FFFFFF;
 }
+
+/* 隐藏标题前的 # 锚点符号（技术用，普通用户不需要看到） */
+.vp-doc .header-anchor {
+  display: none;
+}

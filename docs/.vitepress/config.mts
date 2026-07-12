@@ -99,10 +99,8 @@ export default defineConfig({
         },
       },
     },
-    editLink: {
-      pattern: 'https://github.com/leslamcomedy/leslamcomedy.github.io/edit/main/docs/:path',
-      text: '提议修改此页（自动创建 Pull Request）',
-    },
+    // 不提供 GitHub 在线编辑：成员通过微信投稿，由主理人更新
+    editLink: false,
     outline: { label: '本页目录' },
     docFooter: { prev: '上一页', next: '下一页' },
     lastUpdated: { text: '最后更新' },

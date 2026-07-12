@@ -4,7 +4,7 @@ layout: home
 hero:
   name: 乐咔喜剧知识库
   text: LeSlam Comedy
-  tagline: 脱口秀学习资料一站式汇总：视频、播客、书单、复盘文稿
+  tagline: 脱口秀学习资料一站式汇总：视频、播客、书单、段子文稿
   image:
     src: /logo.png
     alt: LeSlam Comedy

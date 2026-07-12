@@ -35,9 +35,9 @@ function duanziSidebarItems() {
 export default defineConfig({
   lang: 'zh-CN',
   title: '乐咔喜剧知识库',
-  description: 'LeSlam Comedy 俱乐部内部学习资料：脱口秀技巧、专场、播客、书单、复盘文稿',
+  description: 'LeSlam Comedy 俱乐部内部学习资料：脱口秀技巧、专场、播客、书单、段子文稿',
   base: '/leSlamComedy_KnowledgeBase/',
-  // 复盘文稿是外部同步的，里面可能有 Obsidian 风格的链接，不让死链接卡住构建
+  // 段子文稿是外部同步的，里面可能有 Obsidian 风格的链接，不让死链接卡住构建
   ignoreDeadLinks: true,
   head: [['link', { rel: 'icon', type: 'image/png', href: '/leSlamComedy_KnowledgeBase/logo.png' }]],
   themeConfig: {

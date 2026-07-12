@@ -1,0 +1,32 @@
+/*
+ * 默认主题把首页大图绝对定位在容器中央，页面缩放或窗口较窄时会和标题文字重叠。
+ * 这里改成正常文档流布局，任何缩放比例下都不会重叠。
+ */
+.VPHome .VPHero .image {
+  padding: 0;
+}
+
+.VPHome .VPHero .image-container {
+  position: relative;
+  transform: none !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 auto;
+}
+
+.VPHome .VPHero .image-bg {
+  display: none;
+}
+
+.VPHome .VPHero .image-src {
+  position: static !important;
+  transform: none !important;
+  max-width: 240px !important;
+  max-height: 240px !important;
+  border-radius: 24px;
+}
+
+/* 导航栏的方形 logo 加一点圆角更精致 */
+.VPNavBarTitle .logo {
+  border-radius: 6px;
+}

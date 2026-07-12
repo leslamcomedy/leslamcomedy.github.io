@@ -101,7 +101,7 @@ export default defineConfig({
     },
     editLink: {
       pattern: 'https://github.com/leslamcomedy/leslamcomedy.github.io/edit/main/docs/:path',
-      text: '在 GitHub 上编辑此页',
+      text: '提议修改此页（自动创建 Pull Request）',
     },
     outline: { label: '本页目录' },
     docFooter: { prev: '上一页', next: '下一页' },

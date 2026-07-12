@@ -37,6 +37,10 @@ features:
     title: 演出资讯
     details: 慕尼黑英文开放麦时间表
     link: /info
+  - icon: 📋
+    title: 俱乐部文档
+    details: 演职人员行为准则、开放麦新人指南
+    link: /club-docs
   - icon: 📝
     title: 好的段子
     details: 优秀段子文稿，先读稿再看表演学习效果最好

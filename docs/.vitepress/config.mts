@@ -50,6 +50,7 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '学习资料', link: '/videos' },
       { text: '好的段子', link: '/duanzi/' },
+      { text: '俱乐部文档', link: '/club-docs' },
       { text: '如何贡献', link: '/contribute' },
     ],
     sidebar: [
@@ -61,6 +62,7 @@ export default defineConfig({
           { text: '综艺与表演', link: '/shows' },
           { text: '书单', link: '/books' },
           { text: '演出资讯', link: '/info' },
+          { text: '俱乐部文档', link: '/club-docs' },
         ],
       },
       {

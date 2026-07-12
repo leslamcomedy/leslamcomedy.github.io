@@ -1,6 +1,6 @@
 import QRCode from 'qrcode'
 
-await QRCode.toFile('网站二维码.png', 'https://fanyu-meng.github.io/leSlamComedy_KnowledgeBase/', {
+await QRCode.toFile('网站二维码.png', 'https://leslamcomedy.github.io/', {
   width: 600,
   margin: 2,
   color: { dark: '#000000', light: '#FFD500' },

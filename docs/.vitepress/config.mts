@@ -36,10 +36,10 @@ export default defineConfig({
   lang: 'zh-CN',
   title: '乐咔喜剧知识库',
   description: 'LeSlam Comedy 俱乐部内部学习资料：脱口秀技巧、专场、播客、书单、段子文稿',
-  base: '/leSlamComedy_KnowledgeBase/',
+  base: '/',
   // 段子文稿是外部同步的，里面可能有 Obsidian 风格的链接，不让死链接卡住构建
   ignoreDeadLinks: true,
-  head: [['link', { rel: 'icon', type: 'image/png', href: '/leSlamComedy_KnowledgeBase/logo.png' }]],
+  head: [['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }]],
   themeConfig: {
     logo: '/logo.png',
     nav: [
@@ -78,7 +78,7 @@ export default defineConfig({
         link: 'https://www.xiaohongshu.com/search_result?keyword=%E6%85%95%E5%B0%BC%E9%BB%91%E4%B9%90%E5%92%94%E5%96%9C%E5%89%A7',
         ariaLabel: '小红书：慕尼黑乐咔喜剧',
       },
-      { icon: 'github', link: 'https://github.com/fanyu-meng/leSlamComedy_KnowledgeBase' },
+      { icon: 'github', link: 'https://github.com/leslamcomedy/leslamcomedy.github.io' },
     ],
     search: {
       provider: 'local',
@@ -94,7 +94,7 @@ export default defineConfig({
       },
     },
     editLink: {
-      pattern: 'https://github.com/fanyu-meng/leSlamComedy_KnowledgeBase/edit/main/docs/:path',
+      pattern: 'https://github.com/leslamcomedy/leslamcomedy.github.io/edit/main/docs/:path',
       text: '在 GitHub 上编辑此页',
     },
     outline: { label: '本页目录' },

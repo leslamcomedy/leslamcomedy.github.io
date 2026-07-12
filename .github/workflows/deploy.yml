@@ -1,0 +1,63 @@
+name: 构建并部署到 GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # 每天 04:00 UTC 自动同步复盘文稿并重新部署
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出本仓库
+        uses: actions/checkout@v4
+
+      # 内容源是私有仓库，仓库名存在 Secret 里，用只读 Deploy Key 检出
+      - name: 检出内容源仓库
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.SOURCE_REPO }}
+          path: .source
+          ssh-key: ${{ secrets.STANDUP_DEPLOY_KEY }}
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: 同步好的段子
+        run: node scripts/sync-content.mjs ".source/好的段子" docs/duanzi
+
+      - name: 安装依赖并构建
+        run: |
+          npm ci
+          npm run docs:build
+
+      - name: 上传构建产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/.vitepress/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 部署到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

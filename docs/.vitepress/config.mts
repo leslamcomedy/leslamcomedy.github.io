@@ -39,6 +39,10 @@ export default defineConfig({
   base: '/',
   // 段子文稿是外部同步的，里面可能有 Obsidian 风格的链接，不让死链接卡住构建
   ignoreDeadLinks: true,
+  // 保留「一句一行」的原文排版（锐锐、高寒等字幕稿是单换行，不加这个会合并成一段）
+  markdown: {
+    breaks: true,
+  },
   head: [['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }]],
   themeConfig: {
     logo: '/logo.png',

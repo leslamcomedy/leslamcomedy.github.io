@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   schedule:
-    # 每天 04:00 UTC 自动同步复盘文稿并重新部署
+    # 每天 04:00 UTC（北京时间 12:00）自动同步好的段子并重新部署
     - cron: '0 4 * * *'
   workflow_dispatch:
 

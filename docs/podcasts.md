@@ -20,11 +20,12 @@
 
 ## 单集推荐
 
-欧洲各地华人喜剧俱乐部的访谈，以及破壁圆桌对谈阿水的那一期。
+这几期单独拿出来听。
 
 | 节目 | 链接 |
 | --- | --- |
 | 破壁圆桌：对谈《喜剧之王单口季》阿水 | [收听](https://www.xiaoyuzhoufm.com/episode/69ed2c001d989496e781de65) |
+| 一言不合 第119期：单口喜剧废料处理厂 | [收听](https://www.xiaoyuzhoufm.com/episode/5e280fab418a84a0461fac4e) |
 | 纽约拉疯喜剧主理人 Rachel47 | [收听](https://www.xiaoyuzhoufm.com/episode/67ad1f22d4ce4a31fd9bfac4) |
 | 法兰克福无限喜剧主理人霸总 | [收听](https://www.xiaoyuzhoufm.com/episode/6845444f79e285b9b8cd86c4) |
 | 慕尼黑椒糖喜剧主理人东东 + 慕尼黑演员林盐盐 | [收听](https://www.xiaoyuzhoufm.com/episode/6958e8fb2db086f8976d02fb) |

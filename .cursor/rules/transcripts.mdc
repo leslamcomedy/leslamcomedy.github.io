@@ -1,0 +1,19 @@
+---
+description: 文字稿必须一句一行。新增或整理逐字稿、字幕稿、转录稿时遵守。
+alwaysApply: true
+---
+
+# 文字稿：一句一行
+
+整理或新增 `docs/transcripts/` 时，正文每一句单独占一行，句与句之间不空行。
+
+站点已设置 `markdown.breaks: true`。单换行会显示成换行。空行会变成新段落，行距变大，不要用。
+
+```markdown
+大家好，我是二维码。
+我是一个比较好信儿的人，就是我受不了别人挑衅我或者反问我。
+```
+
+有视频时，页头与现有文字稿一致：一句说明、来源、播放器、原视频链接，然后是逐字稿。YouTube 用 `https://www.youtube.com/embed/ID?start=秒`。B 站用 `https://player.bilibili.com/player.html?bvid=BV...&danmaku=0&autoplay=0`。没有可靠链接时不要编一个。
+
+保留原稿用字，包括谐音和梗。不要写提取方式。

@@ -33,6 +33,8 @@ export default defineConfig({
           { text: '锐锐：老将，每一步都来之不易', link: '/transcripts/ruirui' },
           { text: '二维马：猜拳', link: '/transcripts/erweima-caiquan' },
           { text: '二维马：打孩子', link: '/transcripts/erweima-dahai' },
+          { text: '邱瑞：钻石房', link: '/transcripts/qiurui' },
+          { text: '刁鑫：吐槽亚麻 manager', link: '/transcripts/diaoxin' },
         ],
       },
       {
@@ -40,6 +42,7 @@ export default defineConfig({
         items: [
           { text: '概览', link: '/learn' },
           { text: 'B站视频合集', link: '/videos' },
+          { text: '单立人 2021 夏', link: '/danliren' },
           { text: '播客', link: '/podcasts' },
           { text: '书单', link: '/books' },
           { text: '综艺推荐', link: '/shows' },

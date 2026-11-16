@@ -1,43 +1,10 @@
 import { defineConfig } from 'vitepress'
-import fs from 'node:fs'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
-
-const docsDir = path.dirname(fileURLToPath(import.meta.url)) + '/..'
-
-// 「好的段子」文稿由 GitHub Actions 自动同步到 docs/duanzi/，
-// 这里在构建时扫描目录（含子目录）生成侧边栏
-function scanDir(dir, urlBase) {
-  if (!fs.existsSync(dir)) return []
-  const items = []
-  const entries = fs
-    .readdirSync(dir, { withFileTypes: true })
-    .sort((a, b) => a.name.localeCompare(b.name, 'zh'))
-  for (const entry of entries) {
-    if (entry.name.startsWith('.') || entry.name === 'images') continue
-    if (entry.isDirectory()) {
-      const children = scanDir(path.join(dir, entry.name), `${urlBase}${entry.name}/`)
-      if (children.length > 0) {
-        items.push({ text: entry.name, collapsed: false, items: children })
-      }
-    } else if (entry.name.endsWith('.md') && entry.name !== 'index.md') {
-      const name = entry.name.replace(/\.md$/, '')
-      items.push({ text: name, link: `${urlBase}${encodeURI(name)}` })
-    }
-  }
-  return items
-}
-
-function duanziSidebarItems() {
-  return scanDir(path.join(docsDir, 'duanzi'), '/duanzi/')
-}
 
 export default defineConfig({
   lang: 'zh-CN',
   title: '乐咔喜剧知识库',
-  description: 'LeSlam Comedy 俱乐部内部学习资料：脱口秀技巧、专场、播客、书单、段子文稿',
+  description: 'LeSlam Comedy 俱乐部内部资料：文字稿、学习资料、俱乐部事务',
   base: '/',
-  // 段子文稿是外部同步的，里面可能有 Obsidian 风格的链接，不让死链接卡住构建
   ignoreDeadLinks: true,
   // 保留「一句一行」的原文排版（锐锐、高寒等字幕稿是单换行，不加这个会合并成一段）
   markdown: {
@@ -48,31 +15,41 @@ export default defineConfig({
     logo: '/logo.png',
     nav: [
       { text: '首页', link: '/' },
-      { text: '学习资料', link: '/videos' },
-      { text: '好的段子', link: '/duanzi/' },
-      { text: '俱乐部文档', link: '/club-docs' },
-      { text: '如何贡献', link: '/contribute' },
+      { text: '文字稿', link: '/transcripts/' },
+      { text: '学习资料', link: '/learn' },
+      { text: '俱乐部', link: '/info' },
     ],
     sidebar: [
       {
-        text: '学习资料',
+        text: '文字稿',
         items: [
-          { text: 'B站视频合集', link: '/videos' },
-          { text: '播客', link: '/podcasts' },
-          { text: '综艺与表演', link: '/shows' },
-          { text: 'House：我是交易的王者', link: '/house' },
-          { text: '书单', link: '/books' },
-          { text: '演出资讯', link: '/info' },
-          { text: '俱乐部文档', link: '/club-docs' },
+          { text: '关于文字稿', link: '/transcripts/' },
+          { text: 'House：我是交易的王者', link: '/transcripts/house' },
+          { text: '快乐小偷 Thief of Joy', link: '/transcripts/thief-of-joy' },
+          { text: '阿水：国外面试企业文化', link: '/transcripts/ashui' },
+          { text: '卡姆：军训和黑车司机', link: '/transcripts/kamu' },
+          { text: '李雪琴：脱口秀大会合集', link: '/transcripts/lixueqin' },
+          { text: '高寒：穷门赛道的神', link: '/transcripts/gaohan' },
+          { text: '锐锐：老将，每一步都来之不易', link: '/transcripts/ruirui' },
         ],
       },
       {
-        text: '好的段子',
-        items: [{ text: '关于这个栏目', link: '/duanzi/' }, ...duanziSidebarItems()],
+        text: '学习资料',
+        items: [
+          { text: '概览', link: '/learn' },
+          { text: 'B站视频合集', link: '/videos' },
+          { text: '播客', link: '/podcasts' },
+          { text: '书单', link: '/books' },
+          { text: '综艺推荐', link: '/shows' },
+        ],
       },
       {
-        text: '参与',
-        items: [{ text: '如何贡献', link: '/contribute' }],
+        text: '俱乐部',
+        items: [
+          { text: '演出资讯', link: '/info' },
+          { text: '俱乐部文档', link: '/club-docs' },
+          { text: '如何贡献', link: '/contribute' },
+        ],
       },
     ],
     socialLinks: [

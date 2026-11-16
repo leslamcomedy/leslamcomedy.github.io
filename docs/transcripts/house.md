@@ -3,10 +3,9 @@
 脱口秀大会第五季，House 这段关于共享充电宝和炒股的演出。下面是视频，以及前七分钟的逐字稿。这一段在大约 6 分 56 秒以「谢谢大家，我是爱上班的 House」结束。
 
 > 来源: [B 站 BV1qe5d6tEd4](https://www.bilibili.com/video/BV1qe5d6tEd4/)
-> 提取方式: whisper large-v3 转写
 > 说明: 已按语义断句，并修正明显谐音。专有名词和数字仍可能有个别错字。
 
-<div class="bili-embed">
+<div class="video-embed">
   <iframe
     src="https://player.bilibili.com/player.html?bvid=BV1qe5d6tEd4&danmaku=0&autoplay=0"
     scrolling="no"

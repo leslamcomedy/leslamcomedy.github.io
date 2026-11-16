@@ -4,47 +4,31 @@ layout: home
 hero:
   name: 乐咔喜剧知识库
   text: LeSlam Comedy
-  tagline: 脱口秀学习资料一站式汇总：视频、播客、书单、段子文稿
+  tagline: 文字稿、学习资料，还有俱乐部自己的事
   image:
     src: /logo.png
     alt: LeSlam Comedy
   actions:
     - theme: brand
-      text: 开始浏览
-      link: /videos
+      text: 看文字稿
+      link: /transcripts/
     - theme: alt
-      text: 好的段子
-      link: /duanzi/
+      text: 学习资料
+      link: /learn
 
 features:
+  - icon: 🎬
+    title: 文字稿
+    details: 完整演出。视频可以在页面里直接播放，逐字稿一句一行
+    link: /transcripts/
   - icon: 📺
-    title: B站视频合集
-    details: 脱口秀技巧、专场、采访三大合集，持续更新
-    link: /videos
-  - icon: 🎙️
-    title: 播客
-    details: 欧洲各地华人喜剧俱乐部主理人访谈
-    link: /podcasts
-  - icon: 🎭
-    title: 综艺与表演
-    details: Kill Tony、单立人比赛等优秀表演（部分带文稿）
-    link: /shows
-  - icon: 📚
-    title: 书单
-    details: 微信读书精选喜剧写作书单
-    link: /books
+    title: 学习资料
+    details: B 站视频合集、播客、书单，以及还没有逐字稿的综艺
+    link: /learn
   - icon: 📅
-    title: 演出资讯
-    details: 慕尼黑英文开放麦时间表
+    title: 俱乐部
+    details: 慕尼黑开放麦时间、行为准则、新人指南
     link: /info
-  - icon: 📋
-    title: 俱乐部文档
-    details: 演职人员行为准则、开放麦新人指南
-    link: /club-docs
-  - icon: 📝
-    title: 好的段子
-    details: 优秀段子文稿，先读稿再看表演学习效果最好
-    link: /duanzi/
 ---
 
 ## 关注我们

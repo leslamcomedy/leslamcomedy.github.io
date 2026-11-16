@@ -31,6 +31,8 @@ export default defineConfig({
           { text: '李雪琴：脱口秀大会合集', link: '/transcripts/lixueqin' },
           { text: '高寒：穷门赛道的神', link: '/transcripts/gaohan' },
           { text: '锐锐：老将，每一步都来之不易', link: '/transcripts/ruirui' },
+          { text: '二维马：猜拳', link: '/transcripts/erweima-caiquan' },
+          { text: '二维马：打孩子', link: '/transcripts/erweima-dahai' },
         ],
       },
       {

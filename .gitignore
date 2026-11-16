@@ -5,6 +5,9 @@ docs/.vitepress/cache/
 # 个人笔记，只保留在本地
 knowledgeBase.md
 
+# 转写临时文件（音频、原始行）
+output/
+
 # CI 同步的内容，不入库
 docs/duanzi/*
 !docs/duanzi/index.md

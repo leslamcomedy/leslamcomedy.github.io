@@ -60,6 +60,7 @@ export default defineConfig({
           { text: 'B站视频合集', link: '/videos' },
           { text: '播客', link: '/podcasts' },
           { text: '综艺与表演', link: '/shows' },
+          { text: 'House：我是交易的王者', link: '/house' },
           { text: '书单', link: '/books' },
           { text: '演出资讯', link: '/info' },
           { text: '俱乐部文档', link: '/club-docs' },

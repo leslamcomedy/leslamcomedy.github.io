@@ -23,7 +23,7 @@ export default defineConfig({
       {
         text: '文字稿',
         items: [
-          { text: '关于文字稿', link: '/transcripts/' },
+          { text: '全部文字稿', link: '/transcripts/' },
           { text: 'House：我是交易的王者', link: '/transcripts/house' },
           { text: '快乐小偷 Thief of Joy', link: '/transcripts/thief-of-joy' },
           { text: '阿水：国外面试企业文化', link: '/transcripts/ashui' },

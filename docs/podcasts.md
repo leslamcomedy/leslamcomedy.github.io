@@ -24,6 +24,7 @@
 
 | 节目 | 链接 |
 | --- | --- |
+| 一言不合 第161期：单口废料：你就这么用开放麦啊？ | [收听](https://www.xiaoyuzhoufm.com/episode/5eff02a46d76607427667101) |
 | 破壁圆桌：对谈《喜剧之王单口季》阿水 | [收听](https://www.xiaoyuzhoufm.com/episode/69ed2c001d989496e781de65) |
 | 一言不合 第119期：单口喜剧废料处理厂 | [收听](https://www.xiaoyuzhoufm.com/episode/5e280fab418a84a0461fac4e) |
 | 纽约拉疯喜剧主理人 Rachel47 | [收听](https://www.xiaoyuzhoufm.com/episode/67ad1f22d4ce4a31fd9bfac4) |

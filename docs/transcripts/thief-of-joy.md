@@ -1,4 +1,4 @@
-# 快乐小偷 Thief of Joy
+# Gianmarco Soresi：快乐小偷 Thief of Joy
 
 Gianmarco Soresi 的专场。画面上是中英对照字幕，下面逐字稿两种语言都保留：中文一行，英文紧接一行。41:00–47:00 用黄底标出。
 

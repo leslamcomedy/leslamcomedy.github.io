@@ -31,6 +31,14 @@ features:
     link: /info
 ---
 
+## 最新动态
+
+更新时间为柏林时间。
+
+- **2026 年 11 月 20 日 21:45** · 添加播客 [《一言不合》：你就这么用开放麦啊？](/podcasts)
+- **2026 年 11 月 16 日 23:18** · 补充[邱瑞、刁鑫文字稿](/transcripts/)和单立人视频合集
+- **2026 年 11 月 16 日 22:56** · 添加播客 [《一言不合》：单口喜剧废料处理厂](/podcasts)
+
 ## 关注我们
 
 - Instagram：[leslamcomedy](https://www.instagram.com/leslamcomedy/)

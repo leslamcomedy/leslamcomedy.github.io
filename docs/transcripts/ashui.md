@@ -18,6 +18,8 @@
 
 [去 YouTube 打开原视频](https://youtu.be/MgF-ZJ8xxeM)
 
+延伸收听：[破壁圆桌对谈阿水（小宇宙）](https://www.xiaoyuzhoufm.com/episode/69ed2c001d989496e781de65)
+
 ## 逐字稿
 
 大家好，我叫阿水

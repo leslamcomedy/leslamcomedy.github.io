@@ -8,7 +8,7 @@ import VideoLibrary from './.vitepress/theme/components/VideoLibrary.vue'
 
 # 学习视频
 
-技巧、专场、采访，以及开放麦 / 拼盘演出。直接点击视频标题观看，无需进入个人收藏夹。可按分类筛选，也可以搜索标题、演员或 UP 主。
+选择一个分类看脱口秀技巧、专场、采访或开放麦演出，也可以直接搜索演员、作品或 UP 主。综艺和演出合集另外列出。
 
 <VideoLibrary />
 

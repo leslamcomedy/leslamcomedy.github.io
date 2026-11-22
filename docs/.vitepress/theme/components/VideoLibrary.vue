@@ -1,25 +1,22 @@
 <script setup>
 import { computed, ref } from 'vue'
-import videos from '../../../data/videos.json'
+import { data } from '../../../data/catalog.data'
+import { groups } from '../../../data/catalogGroups'
 
-const category = ref('all')
+const videos = data.filter(item => item.kind === '视频')
+const categories = groups['视频']
+const category = ref('')
 const query = ref('')
-const categories = [
-  { id: 'all', label: '全部' },
-  { id: 'technique', label: '脱口秀技巧' },
-  { id: 'special', label: '脱口秀专场' },
-  { id: 'interview', label: '脱口秀采访' },
-  { id: 'open-mic', label: '开放麦 / 拼盘演出' },
-]
 const filtered = computed(() => videos.filter(video =>
-  (category.value === 'all' || video.category === category.value) &&
-  `${video.title} ${video.author}`.toLowerCase().includes(query.value.trim().toLowerCase())
+  (!category.value || video.group === category.value) &&
+  [video.title, video.detail, video.keywords].join(' ').toLowerCase().includes(query.value.trim().toLowerCase())
 ))
-const count = id => videos.filter(video => id === 'all' || video.category === id).length
-const label = id => categories.find(item => item.id === id)?.label
-const duration = seconds => `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`
+const sections = computed(() => categories.map(name => ({
+  name, items: filtered.value.filter(video => video.group === name),
+})).filter(section => section.items.length))
+const count = name => videos.filter(video => video.group === name).length
 function reset() {
-  category.value = 'all'
+  category.value = ''
   query.value = ''
 }
 </script>
@@ -27,26 +24,30 @@ function reset() {
 <template>
   <section class="video-library" aria-label="学习视频列表">
     <div class="video-filters" role="group" aria-label="视频分类">
-      <button v-for="item in categories" :key="item.id" type="button"
-        :aria-pressed="category === item.id" @click="category = item.id">
-        {{ item.label }} <span>{{ count(item.id) }}</span>
+      <button type="button" :aria-pressed="!category" @click="category = ''">全部 <span>{{ videos.length }}</span></button>
+      <button v-for="name in categories" :key="name" type="button"
+        :aria-pressed="category === name" @click="category = name">
+        {{ name }} <span>{{ count(name) }}</span>
       </button>
     </div>
     <label class="video-search">
       <span>搜索视频</span>
       <input v-model="query" type="search" placeholder="搜索标题、演员或 UP 主" />
     </label>
-    <p class="video-result-count" role="status">共 {{ filtered.length }} 个视频 · 点击标题，在 B 站打开</p>
-    <ul v-if="filtered.length" class="video-list">
-      <li v-for="video in filtered" :key="video.id">
-        <a :href="`https://www.bilibili.com/video/${video.id}/`" target="_blank" rel="noopener noreferrer">
-          <span class="video-title">{{ video.title }} <span aria-hidden="true">↗</span></span>
-          <span class="video-meta">{{ label(video.category) }} · {{ duration(video.duration) }} · {{ video.author }}</span>
-          <span class="sr-only">（在新标签页打开）</span>
-        </a>
-      </li>
-    </ul>
-    <div v-else class="video-empty">
+    <p class="video-result-count" role="status">共 {{ filtered.length }} 条视频资料</p>
+    <section v-for="section in sections" :key="section.name" :aria-label="section.name">
+      <h2>{{ section.name }}</h2>
+      <ul class="video-list">
+        <li v-for="video in section.items" :key="video.href">
+          <a :href="video.href" target="_blank" rel="noopener noreferrer">
+            <span class="video-title">{{ video.title }} <span aria-hidden="true">↗</span></span>
+            <span class="video-meta">{{ video.platform }}<template v-if="video.detail"> · {{ video.detail }}</template></span>
+            <span class="sr-only">（在新标签页打开）</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <div v-if="!filtered.length" class="video-empty">
       <p>没有找到匹配的视频，试试其他关键词或分类。</p>
       <button type="button" @click="reset">查看全部视频</button>
     </div>

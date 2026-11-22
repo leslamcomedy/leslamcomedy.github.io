@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: '乐咔喜剧知识库',
-  description: 'LeSlam Comedy 俱乐部内部资料：文字稿、学习资料、俱乐部事务',
+  title: '乐咔喜剧资料库',
+  description: '由慕尼黑乐咔喜剧发起，整理中文脱口秀演出文字稿、视频、播客、书籍和手册。',
   base: '/',
   ignoreDeadLinks: true,
   // 保留「一句一行」的原文排版（锐锐、高寒等字幕稿是单换行，不加这个会合并成一段）
@@ -13,11 +13,12 @@ export default defineConfig({
   head: [['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }]],
   themeConfig: {
     logo: '/logo.png',
+    siteTitle: '乐咔喜剧',
     nav: [
       { text: '首页', link: '/' },
       { text: '文字稿', link: '/transcripts/' },
       { text: '学习资料', link: '/learn' },
-      { text: '俱乐部', link: '/info' },
+      { text: '乐咔俱乐部', link: '/info' },
     ],
     sidebar: [
       {
@@ -42,11 +43,11 @@ export default defineConfig({
         items: [
           { text: '概览', link: '/learn' },
           { text: '学习视频', link: '/videos' },
-          { text: '喜剧研究与教学', link: '/comedy-channels' },
-          { text: '免费喜剧资料', link: '/comedy-resources' },
+          { text: '喜剧点评与创作解析', link: '/comedy-channels' },
+          { text: '公开视频课与讲解', link: '/comedy-resources#公开视频课与讲解' },
           { text: '单立人 2021 夏', link: '/danliren' },
           { text: '播客', link: '/podcasts' },
-          { text: '书单', link: '/books' },
+          { text: '书籍与手册', link: '/books' },
           { text: '综艺推荐', link: '/shows' },
         ],
       },
@@ -54,8 +55,7 @@ export default defineConfig({
         text: '俱乐部',
         items: [
           { text: '演出资讯', link: '/info' },
-          { text: '俱乐部文档', link: '/club-docs' },
-          { text: '如何贡献', link: '/contribute' },
+          { text: '推荐资料', link: '/contribute' },
         ],
       },
     ],
@@ -75,7 +75,7 @@ export default defineConfig({
       provider: 'local',
       options: {
         translations: {
-          button: { buttonText: '搜索', buttonAriaLabel: '搜索' },
+          button: { buttonText: '全文搜索', buttonAriaLabel: '全文搜索' },
           modal: {
             noResultsText: '没有找到相关内容',
             resetButtonTitle: '清除搜索',
@@ -84,7 +84,6 @@ export default defineConfig({
         },
       },
     },
-    // 不提供 GitHub 在线编辑：成员通过微信投稿，由主理人更新
     editLink: false,
     outline: { label: '本页目录' },
     docFooter: { prev: '上一页', next: '下一页' },
@@ -93,8 +92,8 @@ export default defineConfig({
     sidebarMenuLabel: '目录',
     returnToTopLabel: '回到顶部',
     footer: {
-      message: 'LeSlam Comedy 乐咔喜剧俱乐部 · Instagram: leslamcomedy · 小红书: 慕尼黑乐咔喜剧（小红书号 6381249812）',
-      copyright: '内部学习资料，欢迎大家一起补充',
+      message: 'LeSlam Comedy 慕尼黑乐咔喜剧 · <a href="/contribute.html">推荐资料</a> · <a href="/info.html">俱乐部资讯</a>',
+      copyright: '<a href="https://www.instagram.com/leslamcomedy/">Instagram @leslamcomedy</a> · 小红书「慕尼黑乐咔喜剧」6381249812',
     },
   },
 })

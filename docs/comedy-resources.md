@@ -4,6 +4,8 @@
 
 ## 创作和表演手册
 
+<!-- #region handbooks -->
+
 ### 单口喜剧表演手册 v1.1
 
 单立人喜剧出品、石老板编著。从主题、前提和包袱，到上台准备、表演与演出回顾，适合刚开始写段子的人。
@@ -16,13 +18,15 @@
 
 徐风暴、同焱编写的入门资料，硅谷脱口秀将其列为开放麦新人参考资料。
 
-[查看 PDF](https://drive.google.com/file/d/1vjKYPRplZUlpO_V6sW37bqjB-ajKoRpU/view?usp=sharing) · [查看资料来源](https://ggtkx.org/become/)
+[在 Google Drive 打开 PDF](https://drive.google.com/file/d/1vjKYPRplZUlpO_V6sW37bqjB-ajKoRpU/view?usp=sharing) · [查看资料来源](https://ggtkx.org/become/)
 
 ### 人人都能学会单口喜剧
 
 刘旸教主编写的单口喜剧入门资料，硅谷脱口秀将其列为开放麦新人参考资料。
 
-[查看 PDF](https://drive.google.com/file/d/1Oyobvw4GlDJi6DZtn_tRgMkD-jlYavVc/view?usp=sharing) · [查看资料来源](https://ggtkx.org/become/)
+[在 Google Drive 打开 PDF](https://drive.google.com/file/d/1Oyobvw4GlDJi6DZtn_tRgMkD-jlYavVc/view?usp=sharing) · [查看资料来源](https://ggtkx.org/become/)
+
+<!-- #endregion handbooks -->
 
 ## 公开视频课与讲解
 

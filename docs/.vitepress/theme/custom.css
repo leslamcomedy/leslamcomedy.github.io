@@ -3,8 +3,9 @@
  */
 
 :root {
+  --vp-nav-logo-height: 32px;
   /* 品牌黄（替换默认蓝色） */
-  --vp-c-brand-1: #FFE566;
+  --vp-c-brand-1: #785d00;
   --vp-c-brand-2: #FFD500;
   --vp-c-brand-3: #CCAA00;
   --vp-c-brand-soft: rgba(255, 213, 0, 0.14);
@@ -81,7 +82,7 @@
 
 .VPNavBarMenuLink.active,
 .VPNavBarMenuLink:hover {
-  color: #CCAA00 !important;
+  color: var(--vp-c-brand-1) !important;
 }
 
 .dark .VPNavBarMenuLink.active,
@@ -91,7 +92,7 @@
 
 /* 侧边栏激活项 */
 .VPSidebarItem.is-active > .item .link {
-  color: #CCAA00;
+  color: var(--vp-c-brand-1);
   font-weight: 600;
 }
 
@@ -99,24 +100,13 @@
   color: #FFD500;
 }
 
-/* 首页功能卡片 hover */
-.VPFeature:hover .box {
-  border-color: #FFD500;
-}
-
-.VPFeature .title {
-  color: #000000;
-}
-
-.dark .VPFeature .title {
-  color: #FFFFFF;
-}
-
 /* 页脚：黑底白字，呼应 logo 黑色背景 */
 .VPFooter {
   background-color: #000000 !important;
   color: #FFFFFF !important;
 }
+
+.VPFooter .message, .VPFooter .copyright { color: #d6d6d2; }
 
 .VPFooter a {
   color: #FFD500 !important;
@@ -128,11 +118,11 @@
 
 /* 链接 */
 .vp-doc a {
-  color: #CCAA00;
+  color: var(--vp-c-brand-1);
 }
 
 .vp-doc a:hover {
-  color: #FFD500;
+  color: var(--vp-c-text-1);
 }
 
 .dark .vp-doc a {
@@ -145,64 +135,9 @@
   box-shadow: inset 0 0 0 2px #FFD500;
 }
 
-/*
- * 默认主题把首页大图绝对定位在容器中央，页面缩放或窗口较窄时会和标题文字重叠。
- * 这里改成正常文档流布局，任何缩放比例下都不会重叠。
- */
-.VPHome .VPHero .image {
-  padding: 0;
-  margin: 0 0 32px;
-}
-
-.VPHome .VPHero .image-container {
-  position: relative;
-  transform: none !important;
-  width: auto !important;
-  height: auto !important;
-  margin: 0 auto;
-}
-
-.VPHome .VPHero .image-bg {
-  display: none;
-}
-
-.VPHome .VPHero .image-src {
-  display: block;
-  position: static !important;
-  transform: none !important;
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
-  max-width: 240px !important;
-  max-height: 240px !important;
-  border-radius: 24px;
-}
-
-@media (max-width: 639px) {
-  .VPHome .VPHero .image-src {
-    max-width: 192px !important;
-    max-height: 192px !important;
-  }
-}
-
-@media (min-width: 960px) {
-  .VPHome .VPHero .image {
-    margin: 0;
-  }
-}
-
 /* 导航栏 logo 圆角 */
 .VPNavBarTitle .logo {
   border-radius: 6px;
-}
-
-/* 首页副标题 */
-.VPHome .VPHero .tagline {
-  color: #333333;
-}
-
-.dark .VPHome .VPHero .tagline {
-  color: #E0E0E0;
 }
 
 /* 视频播放器：16:9，随页面宽度缩放 */
@@ -241,15 +176,6 @@
   color: #000000;
 }
 
-/* 首页 LeSlam Comedy 副标题保持黑色/白色 */
-.VPHome .VPHero .text {
-  color: #000000;
-}
-
-.dark .VPHome .VPHero .text {
-  color: #FFFFFF;
-}
-
 /* 隐藏标题前的 # 锚点符号（技术用，普通用户不需要看到） */
 .vp-doc .header-anchor {
   display: none;
@@ -271,17 +197,26 @@
   border-radius: 4px;
 }
 
-.vp-doc .book-card h2 {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 1.2rem;
-}
-
 .vp-doc .book-card p { margin: 0.6rem 0; }
-.book-author { color: var(--vp-c-text-2); }
+.book-card > p:first-child, .book-card > div > p:first-child { margin-top: 0; }
+.book-card > div > p:first-child { color: var(--vp-c-text-2); }
 
 @media (max-width: 420px) {
   .book-card { grid-template-columns: 84px minmax(0, 1fr); gap: 1rem; }
   .book-card img { width: 84px; }
+}
+
+.directory-updates {
+  width: min(calc(100% - clamp(40px, 8vw, 112px)), 1072px);
+  margin: 0 auto 40px;
+  border-block: 1px solid var(--vp-c-divider);
+  line-height: 1.7;
+}
+.directory-updates summary { padding: 14px 0; cursor: pointer; font-weight: 600; }
+.directory-updates p { margin: 4px 0 8px; color: var(--vp-c-text-2); }
+.directory-updates ul { padding: 0 0 18px 1.25em; list-style: disc; }
+.directory-updates li + li { margin-top: 5px; }
+.directory-updates a { color: var(--vp-c-brand-1); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 760px) {
+  .directory-updates { width: calc(100% - 32px); }
 }

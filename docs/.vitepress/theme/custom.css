@@ -254,3 +254,34 @@
 .vp-doc .header-anchor {
   display: none;
 }
+
+/* 书单：封面和介绍一起显示，小屏幕下保持可读 */
+.book-card {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 1.25rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.book-card img {
+  display: block;
+  width: 120px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.vp-doc .book-card h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 1.2rem;
+}
+
+.vp-doc .book-card p { margin: 0.6rem 0; }
+.book-author { color: var(--vp-c-text-2); }
+
+@media (max-width: 420px) {
+  .book-card { grid-template-columns: 84px minmax(0, 1fr); gap: 1rem; }
+  .book-card img { width: 84px; }
+}

@@ -2,8 +2,8 @@
 layout: page
 sidebar: false
 aside: false
-title: 中文脱口秀资料库
-description: 慕尼黑乐咔喜剧发起的中文脱口秀资料库。查找演出文字稿、学习视频、播客、书籍和创作手册。
+title: 乐咔喜剧精选推荐
+description: 慕尼黑乐咔喜剧筛选推荐的演出、文字稿、视频、播客、书籍与创作手册。从乐咔的选择中，发现值得看、读、听的喜剧内容。
 recent:
   - 单口喜剧进阶指南
   - 单口喜剧表演手册 v1.1

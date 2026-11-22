@@ -128,18 +128,13 @@ function destination(href: string) {
       <div class="intro">
         <div class="brand-heading">
           <img class="club-logo" :src="withBase('/logo.png')" alt="慕尼黑乐咔喜剧 LeSlam Comedy" width="108" height="108" />
-          <h1>中文脱口秀<span>资料库</span></h1>
+          <h1>乐咔喜剧<span>精选推荐</span></h1>
         </div>
-        <p>由慕尼黑乐咔喜剧整理。读演出文字稿、看专场，找写段子和上台表演的资料。</p>
-        <form role="search" aria-label="资料目录" class="directory-search" @submit.prevent="showResults">
-          <span class="vpi-search" aria-hidden="true"></span>
-          <input ref="searchInput" v-model="query" type="search" aria-label="搜索资料"
-            placeholder="搜索演员、作品或主题" enterkeyhint="search" />
-          <button type="submit">搜索</button>
-        </form>
+        <p>从喜剧作品到写作与表演资料，这里是我们愿意推荐给你的选择。由慕尼黑乐咔喜剧筛选整理，持续补充。</p>
+        <a class="browse-picks" href="#catalog-heading">浏览精选推荐 <span aria-hidden="true">↓</span></a>
       </div>
       <aside v-if="recent.length" class="recent" aria-labelledby="recent-heading">
-        <h2 id="recent-heading">近期收录</h2>
+        <h2 id="recent-heading">近期推荐</h2>
         <ul>
           <li v-for="item in recent" :key="item.href">
             <a :href="destination(item.href)">
@@ -154,19 +149,29 @@ function destination(href: string) {
 
     <section class="catalog" aria-labelledby="catalog-heading">
       <div class="catalog-heading">
-        <h2 id="catalog-heading" ref="resultHeading" tabindex="-1">{{ terms.length ? '搜索结果' : '资料目录' }}</h2>
+        <h2 id="catalog-heading" ref="resultHeading" tabindex="-1">{{ terms.length ? '已收录推荐中的搜索结果' : '按类别发现推荐' }}</h2>
         <a class="contribute-link" :href="withBase('/contribute.html')">推荐资料</a>
       </div>
+      <p class="curation-note">这里呈现乐咔的选择与偏好，收录范围不求全面。可以先随意逛逛，再找你感兴趣的内容。</p>
       <div class="formats" role="group" aria-label="按资料类型筛选">
         <button type="button" :aria-pressed="kind === ''" @click="selectKind('')">全部</button>
         <button v-for="key in kinds" :key="key" type="button" :aria-pressed="kind === key" @click="selectKind(key)">{{ key }}</button>
+      </div>
+      <div class="catalog-search">
+        <label for="recommendation-search">想找某一条推荐？</label>
+        <form role="search" aria-label="搜索乐咔精选" class="directory-search" @submit.prevent="showResults">
+          <span class="vpi-search" aria-hidden="true"></span>
+          <input id="recommendation-search" ref="searchInput" v-model="query" type="search" aria-label="搜索已收录的推荐"
+            placeholder="在已收录的推荐中搜索" enterkeyhint="search" />
+          <button type="submit">搜索</button>
+        </form>
       </div>
       <div v-if="subgroups.length" class="subfilters" role="group" :aria-label="kind + '分类'">
         <button type="button" :aria-pressed="!group" @click="group = ''">全部{{ kind }}</button>
         <button v-for="name in subgroups" :key="name" type="button" :aria-pressed="group === name" @click="group = name">{{ name }}</button>
       </div>
       <div class="result-line">
-        <p role="status" aria-live="polite">共 {{ results.length }} 条资料</p>
+        <p role="status" aria-live="polite">{{ terms.length || kind ? '匹配' : '已精选' }} {{ results.length }} 条</p>
         <button v-if="query || kind" type="button" @click="reset">清除筛选</button>
       </div>
       <section v-for="shelf in shelves" :key="shelf.kind" class="shelf" :class="{ 'book-preview': shelf.bookPreview }" :aria-label="shelf.kind">
@@ -199,8 +204,8 @@ function destination(href: string) {
         </div>
       </section>
       <div v-if="!results.length" class="empty">
-        <h3>没有找到匹配的资料</h3>
-        <p>试试演员名、节目名，或清除筛选查看全部资料。</p>
+        <h3>已收录的推荐中暂未找到匹配内容</h3>
+        <p>这里只搜索乐咔已收录的内容。可以换个关键词，或清除筛选继续浏览推荐。</p>
       </div>
       <button v-if="singleSection && results.length > limit" class="load-more" type="button" @click="limit += pageSize">
         再显示 {{ Math.min(pageSize, results.length - limit) }} 条
@@ -232,9 +237,14 @@ function destination(href: string) {
 .brand-heading { display: flex; align-items: center; gap: clamp(14px, 2vw, 26px); }
 .club-logo { flex: none; width: clamp(88px, 8.5vw, 108px); height: auto; border-radius: 10px; }
 .intro h1 { margin: 0; font-size: clamp(2.1rem, 3.8vw, 3.5rem); line-height: 1.18; font-weight: 800; letter-spacing: -.045em; }
-.intro h1 span { color: #ffda38; white-space: nowrap; }
+.intro h1 span { display: block; color: #ffda38; white-space: nowrap; }
 .intro > p { margin: 12px 0 24px; max-width: 29em; color: #e1e1d9; font-size: 1rem; line-height: 1.7; }
-.directory-search { display: flex; align-items: center; gap: 10px; padding: 5px 5px 5px 15px; background: white; color: var(--ink); border-radius: 9px; }
+.browse-picks { display: inline-flex; align-items: center; gap: 16px; min-height: 44px; padding: 10px 18px; border-radius: 8px; background: #ffda38; color: #171810; font-weight: 700; }
+.browse-picks:hover { background: #ffe670; }
+.curation-note { margin-top: 8px; color: var(--vp-c-text-2); font-size: .9375rem; line-height: 1.7; }
+.catalog-search { max-width: 560px; margin: 16px 0 12px; }
+.catalog-search > label { display: block; margin-bottom: 6px; font-size: .875rem; color: var(--vp-c-text-2); }
+.directory-search { border: 1px solid var(--rule); display: flex; align-items: center; gap: 10px; padding: 5px 5px 5px 15px; background: white; color: var(--ink); border-radius: 9px; }
 .directory-search:focus-within { outline: 2px solid #ffda38; outline-offset: 3px; }
 .directory-search .vpi-search { flex: none; width: 18px; height: 18px; color: #66685f; }
 .directory-search input { flex: 1; min-width: 0; width: 100%; color: var(--ink); background: white; font-size: 1rem; outline: none; }

@@ -8,6 +8,8 @@ import VideoLibrary from './.vitepress/theme/components/VideoLibrary.vue'
 
 # 学习视频
 
+由乐咔喜剧筛选整理的视频推荐，收录范围不求全面，持续补充。
+
 选择一个分类看脱口秀技巧、专场、采访或开放麦演出，也可以直接搜索演员、作品或 UP 主。综艺和演出合集另外列出。
 
 <VideoLibrary />

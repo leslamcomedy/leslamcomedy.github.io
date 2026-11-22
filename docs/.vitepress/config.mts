@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: '乐咔喜剧资料库',
-  description: '由慕尼黑乐咔喜剧发起，整理中文脱口秀演出文字稿、视频、播客、书籍和手册。',
+  title: '乐咔喜剧精选',
+  description: '慕尼黑乐咔喜剧筛选推荐的演出文字稿、视频、播客、书籍和创作手册。',
   base: '/',
   ignoreDeadLinks: true,
   // 保留「一句一行」的原文排版（锐锐、高寒等字幕稿是单换行，不加这个会合并成一段）
@@ -92,7 +92,7 @@ export default defineConfig({
     sidebarMenuLabel: '目录',
     returnToTopLabel: '回到顶部',
     footer: {
-      message: 'LeSlam Comedy 慕尼黑乐咔喜剧 · <a href="/contribute.html">推荐资料</a> · <a href="/info.html">俱乐部资讯</a>',
+      message: 'LeSlam Comedy 慕尼黑乐咔喜剧 · 筛选整理，持续推荐 · <a href="/contribute.html">推荐资料</a> · <a href="/info.html">俱乐部资讯</a>',
       copyright: '<a href="https://www.instagram.com/leslamcomedy/">Instagram @leslamcomedy</a> · 小红书「慕尼黑乐咔喜剧」6381249812',
     },
   },

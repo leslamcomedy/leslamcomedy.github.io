@@ -116,9 +116,22 @@
   color: #FFE566 !important;
 }
 
-/* 链接 */
-.vp-doc a {
-  color: var(--vp-c-brand-1);
+/* 资料链接在触屏和桌面上都直接显示下划线。 */
+.resource-link-title, .vp-doc a, .directory-updates a, .VPFooter a,
+.VPSidebarItem a.link > .text, .pager-link .title, .outline-link,
+.VPNavBarMenuLink > span, .VPNavScreenMenuLink {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .2em;
+}
+
+.resource-link-title, .vp-doc a, .directory-updates a {
+  color: var(--resource-link-color, var(--vp-c-brand-1));
+}
+
+a:is(:hover, :focus-visible) .resource-link-title,
+.vp-doc a:is(:hover, :focus-visible) {
+  text-decoration-thickness: 2px;
 }
 
 .vp-doc a:hover {
@@ -216,7 +229,6 @@
 .directory-updates p { margin: 4px 0 8px; color: var(--vp-c-text-2); }
 .directory-updates ul { padding: 0 0 18px 1.25em; list-style: disc; }
 .directory-updates li + li { margin-top: 5px; }
-.directory-updates a { color: var(--vp-c-brand-1); text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 760px) {
   .directory-updates { width: calc(100% - 32px); }
 }

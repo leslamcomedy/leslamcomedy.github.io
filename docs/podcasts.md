@@ -18,30 +18,46 @@
 
 ## 单集推荐
 
-### 一言不合 第161期：单口废料：你就这么用开放麦啊？
+### [单口废料：你就这么用开放麦啊？](https://www.xiaoyuzhoufm.com/episode/5eff02a46d76607427667101)
 
-[在小宇宙收听](https://www.xiaoyuzhoufm.com/episode/5eff02a46d76607427667101)
+**一言不合 · 第161期**
 
-### 破壁圆桌：对谈《喜剧之王单口季》阿水
+四位演员翻出在开放麦上试过的段子，从悟饭的 B-box 聊到怎么讲沉重的话题，也说起一个段子试到什么时候可以放手。
 
-[在小宇宙收听](https://www.xiaoyuzhoufm.com/episode/69ed2c001d989496e781de65) · [站内读阿水的演出文字稿](/transcripts/ashui)
+### [对谈「喜剧之王单口季」阿水—用脱口秀，找到真实的自己](https://www.xiaoyuzhoufm.com/episode/69ed2c001d989496e781de65)
 
-### 一言不合 第119期：单口喜剧废料处理厂
+**破壁圆桌 · EP23**
 
-[在小宇宙收听](https://www.xiaoyuzhoufm.com/episode/5e280fab418a84a0461fac4e)
+阿水和林盐盐聊起从线下开放麦到综艺录制的经历。对着观众和对着镜头，讲法有什么不同？想逗笑大家时，又怎么说出自己真正在意的事？
 
-### 纽约拉疯喜剧主理人 Rachel47
+[站内读阿水的演出文字稿](/transcripts/ashui)
 
-[在小宇宙收听](https://www.xiaoyuzhoufm.com/episode/67ad1f22d4ce4a31fd9bfac4)
+### [单口喜剧废料处理厂](https://www.xiaoyuzhoufm.com/episode/5e280fab418a84a0461fac4e)
 
-### 法兰克福无限喜剧主理人霸总
+**一言不合 · 第119期**
 
-[在小宇宙收听](https://www.xiaoyuzhoufm.com/episode/6845444f79e285b9b8cd86c4)
+小鹿、泽泽、悟饭和贾耗给自己的废稿做了一次「垃圾分类」，一起琢磨哪些包袱还能改，哪些想法可以扔了。
 
-### 慕尼黑椒糖喜剧主理人东东 + 慕尼黑演员林盐盐
+### [纽约拉疯喜剧 Rachel 47：我做了北美版脱口秀大会](https://www.xiaoyuzhoufm.com/episode/67ad1f22d4ce4a31fd9bfac4)
 
-[在小宇宙收听](https://www.xiaoyuzhoufm.com/episode/6958e8fb2db086f8976d02fb)
+**佐治亚小帅｜北美华人故事访谈 · S7E5**
 
-### 原汉堡 Laugh Matter 俱乐部主理人李刃（慕尼黑演员）
+Rachel 47 讲起辞职做纽约拉疯喜剧的经历，以及她怎样凑齐拍摄团队，把北美中文脱口秀录成一档独立综艺。
 
-[在小宇宙收听](https://www.xiaoyuzhoufm.com/episode/6934a5403fec3166cfa24bba)
+### [霸总：从脱口秀主理人到自己的主理人](https://www.xiaoyuzhoufm.com/episode/6845444f79e285b9b8cd86c4)
+
+**欧陆疯云 · 第6期**
+
+法兰克福无限喜剧的霸总讲起地下室里的第一场开放麦，聊在德国经营俱乐部的难处，也算了算离开银行做自由职业的账。
+
+### [从每个月40场开放麦到喜剧荒漠🇩🇪：我们在慕尼黑讲脱口秀](https://www.xiaoyuzhoufm.com/episode/6958e8fb2db086f8976d02fb)
+
+**破壁圆桌 · EP15**
+
+林盐盐回忆在国内一个月跑四十多场开放麦的日子，东东则讲起在慕尼黑办椒糖喜剧时，为什么会把演出场地选在教堂。
+
+### [她用中英德三语讲脱口秀——逗笑德国人有这么难？](https://www.xiaoyuzhoufm.com/episode/6934a5403fec3166cfa24bba)
+
+**破壁圆桌 · EP13**
+
+曾主理汉堡 Laugh Matter 的慕尼黑演员李刃，聊自己怎样从连续冷场走到欧洲喜剧比赛的舞台，以及用中、英、德三种语言讲段子时要怎么改。

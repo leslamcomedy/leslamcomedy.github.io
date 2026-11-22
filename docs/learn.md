@@ -10,4 +10,4 @@
 - [单立人 2021 夏](/danliren) · 整季 YouTube 播放列表
 - [播客](/podcasts) · 整档推荐和单集推荐
 - [书籍与手册](/books) · 喜剧写作书单、在线手册和 PDF
-- [综艺推荐](/shows) · Kill Tony 等节目
+- [综艺推荐](/shows) · Kill Tony 和曹国秀

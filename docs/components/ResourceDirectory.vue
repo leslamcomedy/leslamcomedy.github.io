@@ -23,7 +23,7 @@ function normalize(text: string) {
 
 const indexed = data.map(item => ({
   item, title: normalize(item.title),
-  text: normalize([item.title, item.kind, item.group, item.platform, item.detail, item.keywords, item.source?.label].join(' ')),
+  text: normalize([item.title, item.kind, item.group, item.podcastLabel, item.platform, item.detail, item.keywords, item.source?.label].join(' ')),
 }))
 const terms = computed(() => query.value.trim().split(/\s+/).filter(Boolean).map(normalize))
 const results = computed(() => {
@@ -48,15 +48,16 @@ const sectionLimit = computed(() => {
 })
 
 const shelves = computed(() => kinds.flatMap(key => {
-  const items = results.value.filter(item => item.kind === key)
+  const bookPreview = key === '书籍与手册' && !kind.value && !terms.value.length
+  const items = results.value.filter(item => item.kind === key && (!bookPreview || item.group === '书籍'))
   if (!items.length) return []
   const size = !kind.value && key === '喜剧点评与创作解析' ? pageSize : sectionLimit.value
   const names = new Set([...groups[key], ...items.map(item => item.group ?? '')])
   const sections = [...names].flatMap(name => {
     const matches = items.filter(item => (item.group ?? '') === name)
-    return matches.length ? [{ name, count: matches.length, items: matches.slice(0, size) }] : []
+    return matches.length ? [{ name, count: matches.length, items: matches.slice(0, bookPreview ? 3 : size) }] : []
   })
-  return [{ kind: key, sections }]
+  return [{ kind: key, sections, bookPreview }]
 }))
 
 function selectKind(key: Kind | '', name = '') {
@@ -142,8 +143,8 @@ function destination(href: string) {
         <ul>
           <li v-for="item in recent" :key="item.href">
             <a :href="destination(item.href)">
-              <span class="recent-title">{{ item.title }}</span>
-              <span class="recent-meta">{{ item.group || item.kind }} · {{ item.platform }}</span>
+              <span class="recent-title resource-link-title">{{ item.title }}</span>
+              <span class="recent-meta">{{ item.podcastLabel || item.group || item.kind }} · {{ item.platform }}</span>
               <span v-if="item.kind === '喜剧点评与创作解析'" class="recent-desc">{{ item.detail }}</span>
             </a>
           </li>
@@ -168,27 +169,31 @@ function destination(href: string) {
         <p role="status" aria-live="polite">共 {{ results.length }} 条资料</p>
         <button v-if="query || kind" type="button" @click="reset">清除筛选</button>
       </div>
-      <section v-for="shelf in shelves" :key="shelf.kind" class="shelf" :aria-label="shelf.kind">
-        <h3>{{ shelf.kind }}</h3>
+      <section v-for="shelf in shelves" :key="shelf.kind" class="shelf" :class="{ 'book-preview': shelf.bookPreview }" :aria-label="shelf.kind">
+        <div class="shelf-heading">
+          <h3>{{ shelf.kind }}</h3>
+          <button v-if="shelf.bookPreview" type="button" class="see-all" @click="openSection(shelf.kind, '')">查看全部书籍与手册 <span aria-hidden="true">→</span></button>
+        </div>
         <div v-for="section in shelf.sections" :key="section.name" class="resource-section">
-          <div v-if="section.name" class="group-heading">
+          <div v-if="section.name && !shelf.bookPreview" class="group-heading">
             <h4>{{ section.name }}</h4>
             <span>{{ section.count }} 条</span>
           </div>
-          <ul class="resources">
+          <ul class="resources" :class="{ 'book-grid': section.name === '书籍' }">
             <li v-for="item in section.items" :key="item.href">
               <a class="entry" :href="destination(item.href)">
+                <img v-if="item.cover" :src="withBase(item.cover)" alt="" width="112" height="156" decoding="async" />
                 <div class="entry-info">
-                  <span class="entry-title">{{ item.title }}</span>
+                  <span v-if="item.podcastLabel" class="podcast-label">{{ item.podcastLabel }}</span>
+                  <span class="entry-title resource-link-title">{{ item.title }}</span>
                   <p v-if="item.detail">{{ item.detail }}</p>
                   <span class="metadata">{{ item.platform }}</span>
                 </div>
-                <img v-if="item.cover" :src="withBase(item.cover)" alt="" width="38" height="52" loading="lazy" />
               </a>
               <a v-if="item.source" class="source" :href="item.source.href">{{ item.source.label }}</a>
             </li>
           </ul>
-          <button v-if="section.count > section.items.length && !singleSection" class="see-all" type="button"
+          <button v-if="!shelf.bookPreview && section.count > section.items.length && !singleSection" class="see-all" type="button"
             :aria-label="`查看${section.name || shelf.kind}的全部 ${section.count} 条资料`"
             @click="openSection(shelf.kind, section.name)">查看全部 {{ section.count }} 条 <span aria-hidden="true">→</span></button>
         </div>
@@ -236,13 +241,12 @@ function destination(href: string) {
 .directory-search input::placeholder { color: #66685f; opacity: 1; }
 .directory-search button { flex: none; min-height: 42px; padding: 0 18px; border-radius: 6px; background: #ffda38; color: #171810; font-size: .9375rem; font-weight: 700; }
 .directory-search button:hover { background: #ffe670; }
-.recent { min-width: 0; padding-left: clamp(20px, 3vw, 36px); border-left: 1px solid #4c4d45; }
+.recent { --resource-link-color: #ffe566; min-width: 0; padding-left: clamp(20px, 3vw, 36px); border-left: 1px solid #4c4d45; }
 .recent h2 { margin: 0 0 8px; color: #ffda38; font-size: .9375rem; font-weight: 650; }
 .recent li + li { border-top: 1px solid #3b3d36; }
 .recent a { display: block; padding: 8px 0; }
 .recent-title, .recent-meta { display: block; }
 .recent-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
-.recent a:hover .recent-title { text-decoration: underline; text-underline-offset: 3px; }
 .recent-meta { margin-top: 2px; font-size: .8125rem; color: #c6c8bc; line-height: 1.5; }
 .recent-desc { display: block; margin-top: 3px; color: #e1e1d9; font-size: .875rem; line-height: 1.5; }
 .catalog { margin-top: clamp(26px, 3.5vw, 44px); }
@@ -261,7 +265,8 @@ function destination(href: string) {
 .subfilters button[aria-pressed=true] { border-color: var(--vp-c-brand-1); color: var(--vp-c-text-1); font-weight: 650; }
 .result-line { min-height: 36px; color: var(--vp-c-text-2); font-size: .875rem; }
 .shelf { margin: 26px 0 38px; }
-.shelf > h3 { margin: 0; padding-bottom: 9px; border-bottom: 2px solid var(--vp-c-text-1); font-size: 1.375rem; line-height: 1.4; font-weight: 750; }
+.shelf-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-bottom: 9px; border-bottom: 2px solid var(--vp-c-text-1); }
+.shelf-heading h3 { margin: 0; font-size: 1.375rem; line-height: 1.4; font-weight: 750; }
 .resource-section + .resource-section { margin-top: 21px; }
 .group-heading { display: flex; align-items: baseline; gap: 10px; padding: 12px 0 3px; }
 .group-heading h4 { margin: 0; font-size: 1rem; line-height: 1.5; font-weight: 700; }
@@ -270,15 +275,24 @@ function destination(href: string) {
 .resources li { min-width: 0; border-bottom: 1px solid var(--rule); padding-bottom: 14px; }
 .entry { display: flex; gap: 12px; justify-content: space-between; align-items: flex-start; min-height: 64px; padding: 12px 0 1px; }
 .entry-info { min-width: 0; }
+.podcast-label { display: block; margin-bottom: 4px; color: var(--vp-c-text-2); font-size: .875rem; font-weight: 600; }
 .metadata { display: block; margin-top: 4px; line-height: 1.5; }
 .entry-title { display: block; font-weight: 650; font-size: 1.1rem; line-height: 1.5; overflow-wrap: anywhere; }
-.entry:hover .entry-title { text-decoration: underline; text-decoration-color: #c89c16; text-underline-offset: 4px; }
-.entry img { object-fit: contain; width: 38px; height: 52px; margin-top: 3px; }
-.entry p, .source { color: var(--vp-c-text-2); }
+.book-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px clamp(12px, 2vw, 24px); }
+.book-grid .entry { flex-direction: column; justify-content: flex-start; gap: 10px; }
+.book-grid img { display: block; width: 100%; height: clamp(138px, 15vw, 172px); padding: 8px; object-fit: contain; border-radius: 6px; background: var(--vp-c-bg-soft); }
+.book-grid .entry-title { font-size: 1rem; }
+.book-preview .book-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.book-preview img { height: clamp(94px, 26vw, 130px); }
+@media (min-width: 761px) {
+  .book-preview .entry { flex-direction: row; align-items: center; }
+  .book-preview img { flex: none; width: clamp(64px, 7vw, 86px); height: auto; padding: 0; }
+}
+.entry p { color: var(--vp-c-text-2); }
+.source, .contribute-link { color: var(--vp-c-brand-1); }
 .entry p { margin-top: 3px; font-size: .875rem; line-height: 1.5; }
 .source { display: inline-flex; align-items: center; min-height: 28px; }
-.see-all { min-height: 42px; padding: 4px 0; color: var(--vp-c-brand-1); font-size: .875rem; font-weight: 600; }
-.see-all:hover { text-decoration: underline; text-underline-offset: 4px; }
+.see-all { min-height: 42px; padding: 4px 0; color: var(--vp-c-brand-1); font-size: .875rem; font-weight: 600; text-decoration: underline; text-underline-offset: .2em; }
 .load-more { display: block; margin: 22px auto 0; padding-inline: 28px; }
 .empty { padding: 30px 0; border-block: 1px solid var(--rule); }
 .empty h3 { font-weight: 650; }
@@ -300,10 +314,14 @@ function destination(href: string) {
   .recent-desc { flex-basis: 100%; }
   .is-searching .recent { display: none; }
   .resources { grid-template-columns: 1fr; }
+  .book-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .formats { gap: 6px; margin-top: 10px; }
   .formats button { padding-inline: 11px; }
   .directory-search { padding-left: 9px; gap: 6px; }
   .directory-search button { padding-inline: 13px; }
+}
+@media (max-width: 520px) {
+  .book-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 420px) {
   .intro h1 span { display: block; }

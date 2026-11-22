@@ -1,6 +1,6 @@
 import { videoCategories } from './videoMeta'
 
-export const kinds = ['文字稿', '视频', '播客', '书籍与手册', '喜剧点评与创作解析'] as const
+export const kinds = ['书籍与手册', '文字稿', '视频', '播客', '喜剧点评与创作解析'] as const
 export type Kind = typeof kinds[number]
 
 export const groups: Record<Kind, string[]> = {

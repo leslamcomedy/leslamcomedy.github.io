@@ -11,6 +11,7 @@ export interface Resource {
   platform: string
   detail: string
   keywords: string
+  podcastLabel?: string
   cover?: string
   source?: { label: string; href: string }
 }
@@ -58,21 +59,25 @@ function resourcesOnPage(page: ContentData): Resource[] {
   const src = page.src ?? ''
   const headings = [...src.matchAll(/^(#{1,3}) (.+)$/gm)]
   let parent = ''
-  return headings.flatMap(([heading, depth, title], index) => {
-    if (depth.length === 2) parent = title
+  return headings.flatMap(([heading, depth, headingText], index) => {
+    if (depth.length === 2) parent = headingText
     if (depth.length !== section.level) return []
     const start = headings[index].index! + heading.length
     const body = src.slice(start, headings[index + 1]?.index ?? src.length)
-    const href = body.match(/\]\((https?:\/\/[^\s)]+)\)/)?.[1]
+    const titleLink = headingText.match(/^\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)$/)
+    const title = titleLink?.[1] ?? headingText
+    const href = titleLink?.[2] ?? body.match(/\]\((https?:\/\/[^\s)]+)\)/)?.[1]
     if (!href) return []
     const destination = platform(href)
     const paragraphs = body.split('\n').filter(line => /^[\p{L}《「]/u.test(line))
     const isVideoLesson = parent === '公开视频课与讲解'
     const kind = isVideoLesson ? '视频' : section.kind
     const group = isVideoLesson ? videoCategory('technique') : section.group ?? (section.level === 3 ? parent : undefined)
+    const podcastLabel = kind === '播客' && group === '单集推荐'
+      ? body.match(/^\*\*(.+?)\*\*$/m)?.[1] : undefined
     const extra = body.match(/\[(查看资料来源|查看网页版说明)\]\((https?:\/\/[^)]+)\)/)
     return [{
-      title, href, kind, group, platform: destination, detail: paragraphs[0] ?? '', keywords: paragraphs.join(' '),
+      title, href, kind, group, platform: destination, podcastLabel, detail: paragraphs[0] ?? '', keywords: paragraphs.join(' '),
       cover: body.match(/!\[[^\]]*\]\((\/book-covers\/[^)]+)\)/)?.[1],
       source: extra ? { label: extra[1], href: extra[2] } : undefined,
     }]

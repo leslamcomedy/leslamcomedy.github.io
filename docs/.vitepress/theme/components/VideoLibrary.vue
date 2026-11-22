@@ -40,7 +40,7 @@ function reset() {
       <ul class="video-list">
         <li v-for="video in section.items" :key="video.href">
           <a :href="video.href" target="_blank" rel="noopener noreferrer">
-            <span class="video-title">{{ video.title }} <span aria-hidden="true">↗</span></span>
+            <span class="video-title resource-link-title">{{ video.title }} <span aria-hidden="true">↗</span></span>
             <span class="video-meta">{{ video.platform }}<template v-if="video.detail"> · {{ video.detail }}</template></span>
             <span class="sr-only">（在新标签页打开）</span>
           </a>

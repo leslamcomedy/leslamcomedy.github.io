@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
-import { useData, withBase } from 'vitepress'
-import { data, type Resource } from '../data/catalog.data'
+import { withBase } from 'vitepress'
+import { data } from '../data/catalog.data'
 import { groups, kinds, type Kind } from '../data/catalogGroups'
 
-const { frontmatter } = useData()
 const pageSize = 12
 const query = ref('')
 const kind = ref<Kind | ''>('')
@@ -12,10 +11,6 @@ const group = ref('')
 const limit = ref(pageSize)
 const resultHeading = ref<HTMLElement>()
 const searchInput = ref<HTMLInputElement>()
-const recent = computed<Resource[]>(() => {
-  const titles: string[] = frontmatter.value.recent ?? []
-  return titles.flatMap(title => data.filter(item => item.title === title))
-})
 
 function normalize(text: string) {
   return text.normalize('NFKC').toLowerCase().replace(/\s+/g, '')
@@ -124,47 +119,22 @@ function destination(href: string) {
 
 <template>
   <div class="directory">
-    <header class="directory-hero" :class="{ 'is-searching': terms.length }">
-      <div class="intro">
-        <div class="brand-heading">
-          <img class="club-logo" :src="withBase('/logo.png')" alt="慕尼黑乐咔喜剧 LeSlam Comedy" width="108" height="108" />
-          <h1>乐咔喜剧<span>精选推荐</span></h1>
-        </div>
-        <p>从喜剧作品到写作与表演资料，这里是我们愿意推荐给你的选择。由慕尼黑乐咔喜剧筛选整理，持续补充。</p>
-        <a class="browse-picks" href="#catalog-heading">浏览精选推荐 <span aria-hidden="true">↓</span></a>
-      </div>
-      <aside v-if="recent.length" class="recent" aria-labelledby="recent-heading">
-        <h2 id="recent-heading">近期推荐</h2>
-        <ul>
-          <li v-for="item in recent" :key="item.href">
-            <a :href="destination(item.href)">
-              <span class="recent-title resource-link-title">{{ item.title }}</span>
-              <span class="recent-meta">{{ item.podcastLabel || item.group || item.kind }} · {{ item.platform }}</span>
-              <span v-if="item.kind === '喜剧点评与创作解析'" class="recent-desc">{{ item.detail }}</span>
-            </a>
-          </li>
-        </ul>
-      </aside>
+    <header class="directory-top">
+      <h1 class="visually-hidden">乐咔喜剧推荐</h1>
+      <form role="search" aria-label="搜索乐咔精选" class="directory-search" @submit.prevent="showResults">
+        <span class="vpi-search" aria-hidden="true"></span>
+        <input id="recommendation-search" ref="searchInput" v-model="query" type="search" aria-label="搜索已收录的推荐"
+          placeholder="搜索已收录的推荐" enterkeyhint="search" />
+        <button type="submit">搜索</button>
+      </form>
+      <p class="curation-credit">由慕尼黑乐咔喜剧筛选整理，持续补充。</p>
     </header>
 
     <section class="catalog" aria-labelledby="catalog-heading">
-      <div class="catalog-heading">
-        <h2 id="catalog-heading" ref="resultHeading" tabindex="-1">{{ terms.length ? '已收录推荐中的搜索结果' : '按类别发现推荐' }}</h2>
-        <a class="contribute-link" :href="withBase('/contribute.html')">推荐资料</a>
-      </div>
-      <p class="curation-note">这里呈现乐咔的选择与偏好，收录范围不求全面。可以先随意逛逛，再找你感兴趣的内容。</p>
+      <h2 id="catalog-heading" ref="resultHeading" tabindex="-1" :class="{ 'visually-hidden': !terms.length }">{{ terms.length ? '搜索结果' : '推荐内容' }}</h2>
       <div class="formats" role="group" aria-label="按资料类型筛选">
         <button type="button" :aria-pressed="kind === ''" @click="selectKind('')">全部</button>
         <button v-for="key in kinds" :key="key" type="button" :aria-pressed="kind === key" @click="selectKind(key)">{{ key }}</button>
-      </div>
-      <div class="catalog-search">
-        <label for="recommendation-search">想找某一条推荐？</label>
-        <form role="search" aria-label="搜索乐咔精选" class="directory-search" @submit.prevent="showResults">
-          <span class="vpi-search" aria-hidden="true"></span>
-          <input id="recommendation-search" ref="searchInput" v-model="query" type="search" aria-label="搜索已收录的推荐"
-            placeholder="在已收录的推荐中搜索" enterkeyhint="search" />
-          <button type="submit">搜索</button>
-        </form>
       </div>
       <div v-if="subgroups.length" class="subfilters" role="group" :aria-label="kind + '分类'">
         <button type="button" :aria-pressed="!group" @click="group = ''">全部{{ kind }}</button>
@@ -220,46 +190,20 @@ function destination(href: string) {
   --rule: var(--vp-c-divider);
   width: min(100%, 1184px);
   margin-inline: auto;
-  padding: 32px clamp(20px, 4vw, 56px) 28px;
+  padding: 16px clamp(20px, 4vw, 56px) 28px;
   color: var(--vp-c-text-1);
 }
-.directory-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.65fr) minmax(255px, 1fr);
-  gap: clamp(24px, 4vw, 52px);
-  align-items: center;
-  padding: clamp(24px, 3vw, 40px);
-  border: 1px solid #393a34;
-  border-radius: 16px;
-  background: #1c1d1a;
-  color: #fff;
-}
-.brand-heading { display: flex; align-items: center; gap: clamp(14px, 2vw, 26px); }
-.club-logo { flex: none; width: clamp(88px, 8.5vw, 108px); height: auto; border-radius: 10px; }
-.intro h1 { margin: 0; font-size: clamp(2.1rem, 3.8vw, 3.5rem); line-height: 1.18; font-weight: 800; letter-spacing: -.045em; }
-.intro h1 span { display: block; color: #ffda38; white-space: nowrap; }
-.intro > p { margin: 12px 0 24px; max-width: 29em; color: #e1e1d9; font-size: 1rem; line-height: 1.7; }
-.browse-picks { display: inline-flex; align-items: center; gap: 16px; min-height: 44px; padding: 10px 18px; border-radius: 8px; background: #ffda38; color: #171810; font-weight: 700; }
-.browse-picks:hover { background: #ffe670; }
-.curation-note { margin-top: 8px; color: var(--vp-c-text-2); font-size: .9375rem; line-height: 1.7; }
-.catalog-search { max-width: 560px; margin: 16px 0 12px; }
-.catalog-search > label { display: block; margin-bottom: 6px; font-size: .875rem; color: var(--vp-c-text-2); }
-.directory-search { border: 1px solid var(--rule); display: flex; align-items: center; gap: 10px; padding: 5px 5px 5px 15px; background: white; color: var(--ink); border-radius: 9px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.directory-top { display: flex; flex-direction: column; gap: 8px; }
+.curation-credit { margin: 0; color: var(--vp-c-text-2); font-size: .8125rem; line-height: 1.6; }
+.directory-search { width: min(100%, 420px); border: 1px solid var(--rule); display: flex; align-items: center; gap: 10px; padding: 3px 3px 3px 10px; background: white; color: var(--ink); border-radius: 9px; }
 .directory-search:focus-within { outline: 2px solid #ffda38; outline-offset: 3px; }
 .directory-search .vpi-search { flex: none; width: 18px; height: 18px; color: #66685f; }
-.directory-search input { flex: 1; min-width: 0; width: 100%; color: var(--ink); background: white; font-size: 1rem; outline: none; }
+.directory-search input { flex: 1; min-width: 0; width: 100%; color: var(--ink); background: white; font-size: 16px; outline: none; }
 .directory-search input::placeholder { color: #66685f; opacity: 1; }
-.directory-search button { flex: none; min-height: 42px; padding: 0 18px; border-radius: 6px; background: #ffda38; color: #171810; font-size: .9375rem; font-weight: 700; }
+.directory-search button { flex: none; min-height: 34px; padding: 0 14px; border-radius: 6px; background: #ffda38; color: #171810; font-size: .9375rem; font-weight: 700; }
 .directory-search button:hover { background: #ffe670; }
-.recent { --resource-link-color: #ffe566; min-width: 0; padding-left: clamp(20px, 3vw, 36px); border-left: 1px solid #4c4d45; }
-.recent h2 { margin: 0 0 8px; color: #ffda38; font-size: .9375rem; font-weight: 650; }
-.recent li + li { border-top: 1px solid #3b3d36; }
-.recent a { display: block; padding: 8px 0; }
-.recent-title, .recent-meta { display: block; }
-.recent-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
-.recent-meta { margin-top: 2px; font-size: .8125rem; color: #c6c8bc; line-height: 1.5; }
-.recent-desc { display: block; margin-top: 3px; color: #e1e1d9; font-size: .875rem; line-height: 1.5; }
-.catalog { margin-top: clamp(26px, 3.5vw, 44px); }
+.catalog { margin-top: 10px; }
 .catalog-heading, .result-line { display: flex; align-items: center; }
 .catalog-heading, .result-line { justify-content: space-between; gap: 12px; }
 .catalog-heading h2 { margin: 0; font-size: clamp(1.55rem, 2.4vw, 2rem); font-weight: 750; line-height: 1.4; letter-spacing: -.03em; scroll-margin-top: 90px; }
@@ -274,7 +218,7 @@ function destination(href: string) {
 .subfilters button:hover { color: var(--vp-c-text-1); }
 .subfilters button[aria-pressed=true] { border-color: var(--vp-c-brand-1); color: var(--vp-c-text-1); font-weight: 650; }
 .result-line { min-height: 36px; color: var(--vp-c-text-2); font-size: .875rem; }
-.shelf { margin: 26px 0 38px; }
+.shelf { margin: 16px 0 28px; }
 .shelf-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-bottom: 9px; border-bottom: 2px solid var(--vp-c-text-1); }
 .shelf-heading h3 { margin: 0; font-size: 1.375rem; line-height: 1.4; font-weight: 750; }
 .resource-section + .resource-section { margin-top: 21px; }
@@ -311,18 +255,6 @@ function destination(href: string) {
 .directory-hero :is(a, button):focus-visible { outline-color: #ffda38; }
 @media (max-width: 760px) {
   .directory { padding: 14px 16px 20px; }
-  .directory-hero { display: block; padding: 20px; border-radius: 12px; }
-  .brand-heading { gap: 14px; }
-  .club-logo { width: clamp(68px, 18vw, 82px); }
-  .intro h1 { font-size: clamp(1.65rem, 6.8vw, 2.55rem); }
-  .intro > p { margin: 8px 0 14px; }
-  .recent { margin-top: 18px; padding: 12px 0 0; border-left: 0; border-top: 1px solid #4c4d45; }
-  .recent h2 { margin-bottom: 2px; }
-  .recent a { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 8px; padding: 7px 0; }
-  .recent-title { flex: 1 1 auto; }
-  .recent-meta { margin: 0; }
-  .recent-desc { flex-basis: 100%; }
-  .is-searching .recent { display: none; }
   .resources { grid-template-columns: 1fr; }
   .book-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .formats { gap: 6px; margin-top: 10px; }
@@ -334,6 +266,6 @@ function destination(href: string) {
   .book-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 420px) {
-  .intro h1 span { display: block; }
+
 }
 </style>

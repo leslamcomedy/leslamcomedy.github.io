@@ -1,25 +1,15 @@
-# B站视频合集
+---
+outline: false
+---
 
-以下是整理好的 B 站收藏夹合集，点击直接打开，内容持续更新。
+<script setup>
+import VideoLibrary from './.vitepress/theme/components/VideoLibrary.vue'
+</script>
 
-## 脱口秀技巧
+# 学习视频
 
-学习写段子、表演技巧的视频合集。
+技巧、专场、采访，以及开放麦 / 拼盘演出。直接点击视频标题观看，无需进入个人收藏夹。可按分类筛选，也可以搜索标题、演员或 UP 主。
 
-👉 [打开「脱口秀技巧」收藏夹](https://www.bilibili.com/list/ml3683149949)
+<VideoLibrary />
 
-## 脱口秀专场
-
-优秀演员的完整专场，适合整段学习结构和节奏。
-
-👉 [打开「脱口秀专场」收藏夹](https://www.bilibili.com/list/ml3676554349)
-
-## 脱口秀采访
-
-演员访谈，了解创作思路和幕后故事。
-
-👉 [打开「脱口秀采访」收藏夹](https://www.bilibili.com/list/ml3912678249)
-
-::: tip 提示
-合集在 B 站 App 里打开体验更好，可以直接收藏。
-:::
+有配套文字稿的演出，见 [全部文字稿](/transcripts/)。

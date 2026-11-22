@@ -41,7 +41,7 @@ export default defineConfig({
         text: '学习资料',
         items: [
           { text: '概览', link: '/learn' },
-          { text: 'B站视频合集', link: '/videos' },
+          { text: '学习视频', link: '/videos' },
           { text: '单立人 2021 夏', link: '/danliren' },
           { text: '播客', link: '/podcasts' },
           { text: '书单', link: '/books' },

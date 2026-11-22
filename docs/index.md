@@ -23,7 +23,7 @@ features:
     link: /transcripts/
   - icon: 📺
     title: 学习资料
-    details: B 站视频合集、播客、书单，以及还没有逐字稿的综艺
+    details: 技巧、专场、开放麦视频，还有播客与书单
     link: /learn
   - icon: 📅
     title: 俱乐部

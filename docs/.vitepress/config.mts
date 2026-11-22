@@ -41,7 +41,7 @@ export default defineConfig({
         text: '学习资料',
         items: [
           { text: '概览', link: '/learn' },
-          { text: 'B站视频合集', link: '/videos' },
+          { text: '学习视频', link: '/videos' },
           { text: '喜剧研究与教学', link: '/comedy-channels' },
           { text: '免费喜剧资料', link: '/comedy-resources' },
           { text: '单立人 2021 夏', link: '/danliren' },

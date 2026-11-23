@@ -82,6 +82,7 @@ function seek(event: MouseEvent) {
 .timeline summary {
   width: fit-content;
   max-width: calc(100% - 7rem);
+  margin: 0;
   padding: .4rem 0;
   color: var(--vp-c-text-1);
   font-weight: 600;

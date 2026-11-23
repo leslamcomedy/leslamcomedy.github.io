@@ -1,9 +1,8 @@
+---
+description: 邱瑞这段关于租房和钻石房。
+---
+
 # 邱瑞：钻石房
-
-邱瑞这段关于租房和钻石房。上面是视频，下面一句一行。
-
-> 来源: [B 站 BV1SzgDeyESQ](https://www.bilibili.com/video/BV1SzgDeyESQ/)
-> 说明: 播放整段。
 
 <div class="video-embed">
   <iframe
@@ -79,3 +78,6 @@
 慢慢顺进去。
 关键这个姿势你进去了，就站不起来了呀。
 我长这么大第一次被一个墙角，堵在了一个墙角。
+
+> 来源: [B 站 BV1SzgDeyESQ](https://www.bilibili.com/video/BV1SzgDeyESQ/)
+> 说明: 播放整段。

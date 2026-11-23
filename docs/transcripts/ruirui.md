@@ -1,9 +1,8 @@
+---
+description: 锐锐这段「老将，每一步都来之不易」。
+---
+
 # 锐锐：老将，每一步都来之不易
-
-锐锐这段「老将，每一步都来之不易」。上面是视频，下面一句一行。
-
-> 来源: [B 站 BV1QrffBvEiD](https://www.bilibili.com/video/BV1QrffBvEiD/)
-> 说明: 已按语义断句，并修正明显错字。
 
 <div class="video-embed">
   <iframe
@@ -1312,3 +1311,6 @@
 你相信我吗
 
 感谢大家
+
+> 来源: [B 站 BV1QrffBvEiD](https://www.bilibili.com/video/BV1QrffBvEiD/)
+> 说明: 已按语义断句，并修正明显错字。

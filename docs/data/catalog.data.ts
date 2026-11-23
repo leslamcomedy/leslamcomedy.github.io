@@ -43,7 +43,7 @@ function transcript(page: ContentData): Resource[] {
   const src = page.src ?? ''
   const title = src.match(/^# (.+)$/m)?.[1]
   if (!title || page.url.endsWith('/')) return []
-  const intro = src.match(/^# .+\r?\n\s*\r?\n([^\n]+)/m)?.[1] ?? ''
+  const intro = page.frontmatter.description ?? ''
   const original = src.match(/^> 来源[^\n]*?\]\((https?:\/\/[^)]+)\)/m)?.[1]
   const headings = [...src.matchAll(/^## (.+)$/gm)].map(match => match[1])
   return [{

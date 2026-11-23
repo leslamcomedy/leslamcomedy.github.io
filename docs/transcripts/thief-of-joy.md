@@ -1,9 +1,8 @@
+---
+description: Gianmarco Soresi 的中英双语脱口秀专场，含 41:00–47:00 的对照段落。
+---
+
 # 快乐小偷 Thief of Joy
-
-Gianmarco Soresi 的专场。画面上是中英对照字幕，下面逐字稿两种语言都保留：中文一行，英文紧接一行。41:00–47:00 用黄底标出。
-
-> 来源: [B 站 BV13zCUBAEvb](https://www.bilibili.com/video/BV13zCUBAEvb/)
-> 说明: 软字幕需要登录才能下载，这份是从画面字幕识别的。英文行可能有个别错字。
 
 <div class="video-embed">
   <iframe
@@ -2831,3 +2830,5 @@ COURTNEY TAYLOR
 KAT VALENTINE
 MADDIE WIENER
 
+> 来源: [B 站 BV13zCUBAEvb](https://www.bilibili.com/video/BV13zCUBAEvb/)
+> 说明: 软字幕需要登录才能下载，这份是从画面字幕识别的。英文行可能有个别错字。

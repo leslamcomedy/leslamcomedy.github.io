@@ -1,9 +1,8 @@
+---
+description: 虾图脱口秀。
+---
+
 # 刁鑫：吐槽亚麻 manager
-
-虾图脱口秀。上面是视频，下面一句一行。
-
-> 来源: [YouTube](https://www.youtube.com/watch?v=pzq0FNfyEKY)
-> 说明: 播放整段。
 
 <div class="video-embed">
   <iframe
@@ -105,3 +104,6 @@
 要是这也做不到，那欢迎加入我们俱乐部，我们一起写段子喷死他，
 每个人都可以讲五分钟脱口秀，你一个人五分钟，我们这十几个人那就是一个多小时啊。
 谢谢
+
+> 来源: [YouTube](https://www.youtube.com/watch?v=pzq0FNfyEKY)
+> 说明: 播放整段。

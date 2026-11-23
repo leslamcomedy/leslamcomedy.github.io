@@ -1,9 +1,8 @@
+---
+description: 《喜剧之王单口季2》。阿水讲在国外面试，以及怎么跟面试官解释企业文化。
+---
+
 # 阿水：国外面试企业文化
-
-《喜剧之王单口季2》。阿水讲在国外面试，以及怎么跟面试官解释企业文化。上面是视频，下面一句一行。
-
-> 来源: [YouTube](https://youtu.be/MgF-ZJ8xxeM)
-> 说明: 纯享单篇。已按语义断句，并修正明显错字。
 
 <div class="video-embed">
   <iframe
@@ -215,3 +214,6 @@ I'm a future maker
 
 谢谢大家
 我是阿水
+
+> 来源: [YouTube](https://youtu.be/MgF-ZJ8xxeM)
+> 说明: 纯享单篇。已按语义断句，并修正明显错字。

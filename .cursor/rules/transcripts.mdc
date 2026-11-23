@@ -14,6 +14,8 @@ alwaysApply: true
 我是一个比较好信儿的人，就是我受不了别人挑衅我或者反问我。
 ```
 
-有视频时，页头与现有文字稿一致：一句说明、来源、播放器、原视频链接，然后是逐字稿。YouTube 用 `https://www.youtube.com/embed/ID?start=秒`。B 站用 `https://player.bilibili.com/player.html?bvid=BV...&danmaku=0&autoplay=0`。没有可靠链接时不要编一个。
+有视频时，标题下直接放播放器，随后是原视频链接和逐字稿。来源和说明放在逐字稿末尾。供搜索使用的简介写在 frontmatter 的 `description` 字段。
+
+YouTube 用 `https://www.youtube.com/embed/ID?start=秒`。B 站用 `https://player.bilibili.com/player.html?bvid=BV...&danmaku=0&autoplay=0`。没有可靠链接时不要编一个。
 
 保留原稿用字，包括谐音和梗。不要写提取方式。

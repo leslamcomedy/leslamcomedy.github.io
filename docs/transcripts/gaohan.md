@@ -1,9 +1,8 @@
+---
+description: 高寒这段「穷门赛道的神」。
+---
+
 # 高寒：穷门赛道的神
-
-高寒这段「穷门赛道的神」。上面是视频，下面一句一行。
-
-> 来源: [B 站 BV17tEG67EXR](https://www.bilibili.com/video/BV17tEG67EXR/)
-> 说明: 已按语义断句，并修正明显错字。
 
 <div class="video-embed">
   <iframe
@@ -1101,3 +1100,6 @@
 就是感觉错的时间
 遇到了对的人
 讲到这，谢谢你们
+
+> 来源: [B 站 BV17tEG67EXR](https://www.bilibili.com/video/BV17tEG67EXR/)
+> 说明: 已按语义断句，并修正明显错字。

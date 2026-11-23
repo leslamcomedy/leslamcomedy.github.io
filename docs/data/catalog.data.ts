@@ -46,9 +46,12 @@ function transcript(page: ContentData): Resource[] {
   const intro = page.frontmatter.description ?? ''
   const original = src.match(/^> 来源[^\n]*?\]\((https?:\/\/[^)]+)\)/m)?.[1]
   const headings = [...src.matchAll(/^## (.+)$/gm)].map(match => match[1])
+  const format = page.frontmatter.format ?? '逐字稿'
+  const verbatim = format === '逐字稿'
   return [{
-    title, href: page.url, kind: '文字稿', platform: '站内阅读',
-    detail: page.frontmatter.format ?? '', keywords: [intro, ...headings, page.frontmatter.format ?? '逐字稿'].join(' '),
+    title, href: page.url, kind: verbatim ? '文字稿' : '视频',
+    group: verbatim ? undefined : '演出合集', platform: verbatim ? '站内阅读' : '站内观看',
+    detail: verbatim ? '' : format, keywords: [intro, ...headings, format].join(' '),
     source: original ? { label: `${platform(original)} 原片`, href: original } : undefined,
   }]
 }

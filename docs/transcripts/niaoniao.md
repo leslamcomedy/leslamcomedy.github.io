@@ -3,7 +3,7 @@ description: 腾讯视频《脱口秀大会》第五季鸟鸟合集。从突围�
 format: 分场导读
 ---
 
-# 鸟鸟：脱口秀大会第五季合集
+# 鸟鸟《脱口秀大会》第五季合集 · 分场导读
 
 <TranscriptPlayer platform="youtube" video-id="SMv5DyMMfpI" title="鸟鸟《脱口秀大会》第五季合集">
 

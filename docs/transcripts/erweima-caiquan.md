@@ -6,11 +6,13 @@ description: 单立人原创喜剧大赛 2021 夏。视频从 45 分 50 秒开�
 
 <TranscriptPlayer platform="youtube" video-id="sOhqxdEu_UY" title="二维马：猜拳" :start="2750">
 
-## 演出时间轴
+<template #timeline>
 
 | 原片时点 | 场次与内容 |
 | --- | --- |
-| [45:50](https://www.youtube.com/watch?v=sOhqxdEu_UY&t=2750s) | [单立人原创喜剧大赛 2021 夏 · 猜拳](#逐字稿)　二维马受不了别人反问他一句「是吗」。到了高中，这股不服输的劲儿，让一场猜拳扇巴掌的游戏迟迟收不了场。 |
+| [45:50](https://www.youtube.com/watch?v=sOhqxdEu_UY&t=2750s) | [单立人原创喜剧大赛 2021 夏 · 猜拳](#逐字稿)　一句「是吗」激起胜负欲，一场猜拳变成扇巴掌。 |
+
+</template>
 
 </TranscriptPlayer>
 

@@ -5,20 +5,22 @@ format: 分场导读
 
 # 鸟鸟《脱口秀大会》第五季合集 · 分场导读
 
-<TranscriptPlayer platform="youtube" video-id="SMv5DyMMfpI" title="鸟鸟《脱口秀大会》第五季合集">
+<TranscriptPlayer platform="youtube" video-id="SMv5DyMMfpI" title="鸟鸟《脱口秀大会》第五季合集" :performances="7">
 
-## 演出时间轴
+<template #timeline>
 
 | 合集时点 | 场次与内容 |
 | --- | --- |
-| [00:00](https://www.youtube.com/watch?v=SMv5DyMMfpI&t=0s) | **片头混剪**。节目先剪入几场的片段。想从头听第一场，可跳到 01:48。 |
-| [01:48](https://www.youtube.com/watch?v=SMv5DyMMfpI&t=108s) | [第 2 期 · 突围赛](#kitchen)　小时候玩过一套厨房玩具，长大后真要自己做饭，光是准备一顿饭就把人累坏了。 |
-| [07:19](https://www.youtube.com/watch?v=SMv5DyMMfpI&t=439s) | [第 3 期 · 天花板舞台直通赛](#gym)　一张被裁切的照片勾起容貌焦虑。进了健身房，连机械原理都成了审视身材的新角度。 |
-| [12:18](https://www.youtube.com/watch?v=SMv5DyMMfpI&t=738s) | [第 6 期 · 主题赛](#choices)　从小学练二胡讲起。想歇着会焦虑，真努力了也会焦虑，一道看似简单的选择题越来越难答。 |
-| [17:18](https://www.youtube.com/watch?v=SMv5DyMMfpI&t=1038s) | [第 8 期下 · 半决赛冲刺赛](#elevator)　在电梯里听到别人谈论自己，她该不该出声？一次误投屏和广场上的舞伴，又让尴尬有了新的尺度。 |
-| [21:16](https://www.youtube.com/watch?v=SMv5DyMMfpI&t=1276s) | [第 9 期 · 半决赛](#rent)　租房时跟房东谈条件，住进去以后还要应付独居安全建议。一双男鞋，到底能向谁证明屋里有男人？ |
-| [25:56](https://www.youtube.com/watch?v=SMv5DyMMfpI&t=1556s) | [第 10 期 · 总决赛第一轮](#pessimism)　同样一件坏事，安慰朋友很容易，轮到自己就只记得差评。她试着给自己的悲观分出几个等级。 |
-| [31:37](https://www.youtube.com/watch?v=SMv5DyMMfpI&t=1897s) | [第 10 期 · 总决赛第二轮](#final)　还没公布冠军，她已经分别想过赢和输会招来哪些议论。到最后，她给这场比赛换了一个衡量标准。 |
+| [00:00](https://www.youtube.com/watch?v=SMv5DyMMfpI&t=0s) | **片头混剪**　几场演出的片段剪辑，第一场从 01:48 开始。 |
+| [01:48](https://www.youtube.com/watch?v=SMv5DyMMfpI&t=108s) | [第 2 期 · 突围赛](#kitchen)　童年的玩具厨房很好收拾，长大做顿饭可没那么简单。 |
+| [07:19](https://www.youtube.com/watch?v=SMv5DyMMfpI&t=439s) | [第 3 期 · 天花板舞台直通赛](#gym)　一张裁过的照片，让她把容貌焦虑一路带进健身房。 |
+| [12:18](https://www.youtube.com/watch?v=SMv5DyMMfpI&t=738s) | [第 6 期 · 主题赛](#choices)　从练二胡讲起，努力和躺平怎么选都焦虑。 |
+| [17:18](https://www.youtube.com/watch?v=SMv5DyMMfpI&t=1038s) | [第 8 期下 · 半决赛冲刺赛](#elevator)　电梯里听见别人议论自己，再讲一次误投屏的尴尬。 |
+| [21:16](https://www.youtube.com/watch?v=SMv5DyMMfpI&t=1276s) | [第 9 期 · 半决赛](#rent)　租房谈条件，独居后又要靠一双男鞋显得家里有人。 |
+| [25:56](https://www.youtube.com/watch?v=SMv5DyMMfpI&t=1556s) | [第 10 期 · 总决赛第一轮](#pessimism)　安慰别人和安慰自己，她总能看见不同的那一面。 |
+| [31:37](https://www.youtube.com/watch?v=SMv5DyMMfpI&t=1897s) | [第 10 期 · 总决赛第二轮](#final)　她把夺冠和落败都预演了一遍。 |
+
+</template>
 
 ## 突围赛 · 下厨到底要花多久 {#kitchen}
 

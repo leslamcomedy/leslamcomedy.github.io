@@ -4,17 +4,19 @@ description: 锐锐五场演出，写清晨的邻居、当主管的妈妈、焊�
 
 # 锐锐：老将，每一步都来之不易
 
-<TranscriptPlayer platform="bilibili" video-id="BV1QrffBvEiD" title="锐锐：老将，每一步都来之不易">
+<TranscriptPlayer platform="bilibili" video-id="BV1QrffBvEiD" title="锐锐：老将，每一步都来之不易" :performances="5">
 
-## 演出时间轴
+<template #timeline>
 
 | 原片时点 | 场次与内容 |
 | --- | --- |
-| [00:03](https://www.bilibili.com/video/BV1QrffBvEiD/?t=3) | [第 1 场 · 楼上的孩子与「理解」](#第-1-篇-楼上的孩子与「理解」)　清晨被楼上拍球声吵醒，他去找邻居交涉。人人都劝他理解孩子，他只好想办法让别人也体会一下他的早晨。 |
-| [09:25](https://www.bilibili.com/video/BV1QrffBvEiD/?t=565) | [第 2 场 · 当主管的妈妈](#第-2-篇-当主管的妈妈)　在北京做保洁的妈妈升了主管。从家庭群的通知到年夜饭的发言，一家人都体会到了她工作上的变化。 |
-| [16:34](https://www.bilibili.com/video/BV1QrffBvEiD/?t=994) | [第 3 场 · 焊工爸爸](#第-3-篇-焊工爸爸)　爸爸希望儿子也去学电焊，两个人平时很难把关心说出口。父亲住院后，那些别扭的对话才有了另一层意思。 |
-| [25:31](https://www.bilibili.com/video/BV1QrffBvEiD/?t=1531) | [第 4 场 · 走出农村](#第-4-篇-走出农村)　小时候披麻袋上学，长大后进城谈恋爱。他讲起户口和留在家乡的朋友，也重新看待自己曾经急着离开的地方。 |
-| [36:03](https://www.bilibili.com/video/BV1QrffBvEiD/?t=2163) | [第 5 场 · 爱聊天的出租车司机](#第-5-篇-爱聊天的出租车司机)　婚礼主持人的本职工作是说话，收工后偏偏遇上更能聊的司机。赶车的路上，他还得听司机自己录的歌。 |
+| [00:03](https://www.bilibili.com/video/BV1QrffBvEiD/?t=3) | [第 1 场 · 楼上的孩子与「理解」](#第-1-篇-楼上的孩子与「理解」)　被楼上拍球声吵醒的邻居，也想让别人「理解」他。 |
+| [09:25](https://www.bilibili.com/video/BV1QrffBvEiD/?t=565) | [第 2 场 · 当主管的妈妈](#第-2-篇-当主管的妈妈)　保洁妈妈升了主管，连年夜饭都多了一段领导发言。 |
+| [16:34](https://www.bilibili.com/video/BV1QrffBvEiD/?t=994) | [第 3 场 · 焊工爸爸](#第-3-篇-焊工爸爸)　父亲想让他学电焊，父子俩却都不太会表达关心。 |
+| [25:31](https://www.bilibili.com/video/BV1QrffBvEiD/?t=1531) | [第 4 场 · 走出农村](#第-4-篇-走出农村)　从披麻袋上学讲到进城恋爱，再回头看家乡的朋友。 |
+| [36:03](https://www.bilibili.com/video/BV1QrffBvEiD/?t=2163) | [第 5 场 · 爱聊天的出租车司机](#第-5-篇-爱聊天的出租车司机)　婚礼主持人收工打车，遇上了比自己还能聊的司机。 |
+
+</template>
 
 ## 第 1 篇：楼上的孩子与「理解」
 

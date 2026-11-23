@@ -1,24 +1,28 @@
 ---
-description: 《脱口秀大会》第三季李雪琴的四段演出节选，收录内容从原片 17:21 开始。
+description: 《脱口秀大会》第三季李雪琴六场演出的时间轴，附第 6 期后半段至总决赛的文字稿。
 ---
 
 # 李雪琴：脱口秀大会合集
 
-<TranscriptPlayer platform="youtube" video-id="qYRo_ZzhsuY" title="李雪琴：脱口秀大会合集" :start="1041">
+<TranscriptPlayer platform="youtube" video-id="qYRo_ZzhsuY" title="李雪琴：脱口秀大会合集" :performances="6">
 
-## 演出时间轴
+<template #timeline>
 
-| 原片时点 | 场次与内容 |
+| 时点 | 场次与内容 |
 | --- | --- |
-| [17:21](https://www.youtube.com/watch?v=qYRo_ZzhsuY&t=1041s) | [第 6 期 · 老板娘误会（节选）](#第-1-篇-老板娘误会)　收录从这场的后半段开始。她以为老板爱上了自己，连扣工资、提辞职都能被她当成感情进展。 |
-| [19:10](https://www.youtube.com/watch?v=qYRo_ZzhsuY&t=1150s) | [第 8 期 · 一对一选人](#第-2-篇-一对一选人和自嘲)　对手都想选她，本来是竞争压力，她却从中体会到一回被人争抢的感觉。接着讲起老板怎样劝她参赛。 |
-| [24:56](https://www.youtube.com/watch?v=qYRo_ZzhsuY&t=1496s) | [第 9 期 · 半决赛](#第-3-篇-遗憾、妈妈和铁岭)　比赛要求聊遗憾，她去问妈妈。两个人的对话从身体健康一路走到北京与铁岭，回老家也成了一种主动选择。 |
-| [31:10](https://www.youtube.com/watch?v=qYRo_ZzhsuY&t=1870s) | [过场 · 晋级与赛前采访](#决赛前的采访与花絮)　从半决赛结果切到备稿花絮。镜头里的李雪琴被问到夺冠，又得估量一遍自己的胜算。 |
-| [33:10](https://www.youtube.com/watch?v=qYRo_ZzhsuY&t=1990s) | [第 10 期 · 总决赛](#第-4-篇-终点也是起点)　重新上台后，她先写结尾再找开头，借这次比赛琢磨「终点也是起点」这样的道理要怎么用。 |
+| [00:00](https://www.youtube.com/watch?v=qYRo_ZzhsuY&t=0s) | **第 1 期 · 搞笑网红**　北大毕业当网红，聊聊别人对她的期待。 |
+| [06:33](https://www.youtube.com/watch?v=qYRo_ZzhsuY&t=393s) | **第 4 期 · 我想结婚**　从上海的蚊子讲到自己和妈妈的婚事。 |
+| [12:24](https://www.youtube.com/watch?v=qYRo_ZzhsuY&t=744s) | [第 6 期 · 老板娘误会](#第-1-篇-老板娘误会)　老板半夜打来电话，她怀疑是暗恋。文字稿从 17:21 起。 |
+| [19:10](https://www.youtube.com/watch?v=qYRo_ZzhsuY&t=1150s) | [第 8 期 · 一对一选人](#第-2-篇-一对一选人和自嘲)　对手都想选她，她头一回觉得自己抢手。 |
+| [24:56](https://www.youtube.com/watch?v=qYRo_ZzhsuY&t=1496s) | [第 9 期 · 半决赛](#第-3-篇-遗憾、妈妈和铁岭)　问妈妈有什么遗憾，一路聊回铁岭。 |
+| [31:10](https://www.youtube.com/watch?v=qYRo_ZzhsuY&t=1870s) | [赛前采访](#决赛前的采访与花絮)　晋级后谈备稿和夺冠的机会。 |
+| [33:10](https://www.youtube.com/watch?v=qYRo_ZzhsuY&t=1990s) | [第 10 期 · 总决赛](#第-4-篇-终点也是起点)　从驴拉磨讲到麦哲伦，拆解人生格言。 |
+
+</template>
 
 ## 第 1 篇：老板娘误会
 
-我都能笑出声儿来
+[17:21](https://www.youtube.com/watch?v=qYRo_ZzhsuY&t=1041s)　我都能笑出声儿来
 我头儿说雪琴你笑啥呢
 我心想还雪琴
 珍惜这段时光吧
@@ -325,5 +329,5 @@ PK赢了就能晋级
 
 </TranscriptPlayer>
 
-> 来源: [YouTube，从 17:21 开始](https://www.youtube.com/watch?v=qYRo_ZzhsuY&t=1041s) · [半决赛单段视频](https://www.youtube.com/watch?v=0toLe2NFPQk) · [总决赛单段视频](https://www.youtube.com/watch?v=nVQheq6nsT4)
-> 说明: 合集片段，从原片 17:21 起收录，时间轴中后续场次标在各场开头附近。已按语义断句，并修正明显错字。
+> 来源: [YouTube 完整合集](https://www.youtube.com/watch?v=qYRo_ZzhsuY) · [半决赛单段视频](https://www.youtube.com/watch?v=0toLe2NFPQk) · [总决赛单段视频](https://www.youtube.com/watch?v=nVQheq6nsT4)
+> 说明: 时间轴按这版合集标出六场演出的开场和一段采访。前两场可点时间观看，文字稿从第 6 期后半段（17:21）起收录。

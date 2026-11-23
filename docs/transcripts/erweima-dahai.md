@@ -6,11 +6,13 @@ description: 单立人原创喜剧大赛 2021 夏。视频从 22 分 50 秒开�
 
 <TranscriptPlayer platform="youtube" video-id="tl_UGQIGELE" title="二维马：打孩子" :start="1370">
 
-## 演出时间轴
+<template #timeline>
 
 | 原片时点 | 场次与内容 |
 | --- | --- |
-| [22:50](https://www.youtube.com/watch?v=tl_UGQIGELE&t=1370s) | [单立人原创喜剧大赛 2021 夏 · 打孩子](#逐字稿)　小时候挨打，长大后自己当爸爸。他讲起儿子招惹别家小孩、又撕掉自己熬夜写的道歉信，才听懂了父亲当年的口气。 |
+| [22:50](https://www.youtube.com/watch?v=tl_UGQIGELE&t=1370s) | [单立人原创喜剧大赛 2021 夏 · 打孩子](#逐字稿)　儿子撕了他熬夜写的道歉信，他想起了自己的爸爸。 |
+
+</template>
 
 </TranscriptPlayer>
 

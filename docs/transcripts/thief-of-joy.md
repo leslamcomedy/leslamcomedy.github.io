@@ -6,13 +6,15 @@ description: Gianmarco Soresi 的中英双语脱口秀专场，含 41:00–47:00
 
 <TranscriptPlayer platform="bilibili" video-id="BV13zCUBAEvb" title="快乐小偷 Thief of Joy">
 
-## 演出时间轴
+<template #timeline>
 
 | 原片时点 | 场次与内容 |
 | --- | --- |
-| [00:00](https://www.bilibili.com/video/BV13zCUBAEvb/?t=0) | [Gianmarco Soresi · 专场开场](#逐字稿)　他先问观众来自什么样的家庭，再把自己家的离婚经历摊开来讲。全文中英对照。 |
-| [41:00](https://www.bilibili.com/video/BV13zCUBAEvb/?t=2460) | [41:00–47:00 · 亲密关系](#m41)　同居以后，女友的夜惊让两个人都睡不好。接着他从情侣间的私事转到生育话题。 |
-| [47:00](https://www.bilibili.com/video/BV13zCUBAEvb/?t=2820) | [47:00 · 回到两个人的卧室](#m47)　接着上一段，他想在床边装一面镜子，弄清女友到底占了多少位置。 |
+| [00:00](https://www.bilibili.com/video/BV13zCUBAEvb/?t=0) | [Gianmarco Soresi · 专场开场](#逐字稿)　从观众的家庭聊起，讲自己家的离婚故事。 |
+| [41:00](https://www.bilibili.com/video/BV13zCUBAEvb/?t=2460) | [41:00–47:00 · 亲密关系](#m41)　同居后的夜惊，把两个人的私事带进卧室。 |
+| [47:00](https://www.bilibili.com/video/BV13zCUBAEvb/?t=2820) | [47:00 · 回到两个人的卧室](#m47)　他想在床边装镜子，弄清卧室里某些瞬间到底什么样。 |
+
+</template>
 
 </TranscriptPlayer>
 

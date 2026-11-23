@@ -10,7 +10,10 @@ export default defineConfig({
   markdown: {
     breaks: true,
   },
-  head: [['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }]],
+  head: [
+    ['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }],
+    ['script', { defer: '', src: '/site-visits.js' }],
+  ],
   themeConfig: {
     logo: '/logo.png',
     siteTitle: '乐咔喜剧',

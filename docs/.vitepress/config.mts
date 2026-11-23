@@ -33,6 +33,7 @@ export default defineConfig({
           { text: '阿水：国外面试企业文化', link: '/transcripts/ashui' },
           { text: '卡姆：军训和黑车司机', link: '/transcripts/kamu' },
           { text: '李雪琴：脱口秀大会合集', link: '/transcripts/lixueqin' },
+          { text: '鸟鸟：脱口秀大会第五季', link: '/transcripts/niaoniao' },
           { text: '高寒：穷门赛道的神', link: '/transcripts/gaohan' },
           { text: '锐锐：老将，每一步都来之不易', link: '/transcripts/ruirui' },
           { text: '二维马：猜拳', link: '/transcripts/erweima-caiquan' },

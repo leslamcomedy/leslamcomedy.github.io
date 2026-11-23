@@ -8,7 +8,7 @@
 - [快乐小偷 Thief of Joy](/transcripts/thief-of-joy) — 视频与逐字稿。
 - [阿水：国外面试企业文化](/transcripts/ashui) — 国外面试与企业文化，《喜剧之王单口季2》。
 - [卡姆：军训和黑车司机](/transcripts/kamu) — 军训经历与黑车司机。
-- [李雪琴：脱口秀大会合集](/transcripts/lixueqin) — 按篇目阅读，其中《遗憾、妈妈和铁岭》待补。
+- [李雪琴：脱口秀大会合集](/transcripts/lixueqin) — 收录四段演出，可直达[半决赛《遗憾、妈妈和铁岭》](/transcripts/lixueqin#第-3-篇-遗憾、妈妈和铁岭)和[总决赛《终点也是起点》](/transcripts/lixueqin#第-4-篇-终点也是起点)。
 - [高寒：穷门赛道的神](/transcripts/gaohan) — 多段演出，按篇目阅读。
 - [锐锐：老将，每一步都来之不易](/transcripts/ruirui) — 多段演出，按篇目阅读。
 - [二维马：猜拳](/transcripts/erweima-caiquan) — 单立人原创喜剧大赛 2021 夏。

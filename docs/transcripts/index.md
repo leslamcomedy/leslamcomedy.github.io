@@ -1,16 +1,17 @@
 # 全部文字稿
 
-点击标题即可阅读文字稿、观看对应视频。正文按一句一行排版，方便对照学习。
+点开一篇，点时间就能从对应位置播放，点场次名可以跳到那段文字。合集逐场列出内容摘要。
 
 ## 文字稿列表
 
+- [鸟鸟：脱口秀大会第五季合集](/transcripts/niaoniao) — 七场分场导读，含总决赛两轮和各场的话题时点。
 - [House：我是交易的王者](/transcripts/house) — 共享充电宝与炒股，收录前七分钟逐字稿。
 - [快乐小偷 Thief of Joy](/transcripts/thief-of-joy) — 视频与逐字稿。
 - [阿水：国外面试企业文化](/transcripts/ashui) — 国外面试与企业文化，《喜剧之王单口季2》。
 - [卡姆：军训和黑车司机](/transcripts/kamu) — 军训经历与黑车司机。
 - [李雪琴：脱口秀大会合集](/transcripts/lixueqin) — 收录四段演出，可直达[半决赛《遗憾、妈妈和铁岭》](/transcripts/lixueqin#第-3-篇-遗憾、妈妈和铁岭)和[总决赛《终点也是起点》](/transcripts/lixueqin#第-4-篇-终点也是起点)。
-- [高寒：穷门赛道的神](/transcripts/gaohan) — 多段演出，按篇目阅读。
-- [锐锐：老将，每一步都来之不易](/transcripts/ruirui) — 多段演出，按篇目阅读。
+- [高寒：穷门赛道的神](/transcripts/gaohan) — 六场演出，从东北农村的作家梦讲到上海。
+- [锐锐：老将，每一步都来之不易](/transcripts/ruirui) — 五场演出，包括主管妈妈、焊工爸爸和出租车司机。
 - [二维马：猜拳](/transcripts/erweima-caiquan) — 单立人原创喜剧大赛 2021 夏。
 - [二维马：打孩子](/transcripts/erweima-dahai) — 单立人原创喜剧大赛 2021 夏。
 - [邱瑞：钻石房](/transcripts/qiurui) — 租房与钻石房。

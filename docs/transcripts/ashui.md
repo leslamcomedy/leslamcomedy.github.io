@@ -4,18 +4,15 @@ description: 《喜剧之王单口季2》。阿水讲在国外面试，以及怎
 
 # 阿水：国外面试企业文化
 
-<div class="video-embed">
-  <iframe
-    src="https://www.youtube.com/embed/MgF-ZJ8xxeM"
-    title="YouTube video player"
-    scrolling="no"
-    frameborder="0"
-    allowfullscreen
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  ></iframe>
-</div>
+<TranscriptPlayer platform="youtube" video-id="MgF-ZJ8xxeM" title="阿水：国外面试企业文化">
 
-[去 YouTube 打开原视频](https://youtu.be/MgF-ZJ8xxeM)
+## 演出时间轴
+
+| 原片时点 | 场次与内容 |
+| --- | --- |
+| [00:00](https://www.youtube.com/watch?v=MgF-ZJ8xxeM&t=0s) | [《喜剧之王单口季 2》· 阿水](#逐字稿)　在新加坡被裁后，她去外企面试。面试官问起中国的企业文化，她想到了东北酒桌，最后还得把「好使」翻成英语。 |
+
+</TranscriptPlayer>
 
 延伸收听：[破壁圆桌对谈阿水（小宇宙）](https://www.xiaoyuzhoufm.com/episode/69ed2c001d989496e781de65)
 

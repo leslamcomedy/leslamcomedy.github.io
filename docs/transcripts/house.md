@@ -4,17 +4,15 @@ description: 《脱口秀大会》第五季。House 从共享充电宝讲到炒�
 
 # House：我是交易的王者
 
-<div class="video-embed">
-  <iframe
-    src="https://player.bilibili.com/player.html?bvid=BV1qe5d6tEd4&danmaku=0&autoplay=0"
-    scrolling="no"
-    frameborder="0"
-    allowfullscreen
-    allow="fullscreen"
-  ></iframe>
-</div>
+<TranscriptPlayer platform="bilibili" video-id="BV1qe5d6tEd4" title="House：我是交易的王者">
 
-[去 B 站打开原视频](https://www.bilibili.com/video/BV1qe5d6tEd4/)
+## 演出时间轴
+
+| 原片时点 | 场次与内容 |
+| --- | --- |
+| [00:00](https://www.bilibili.com/video/BV1qe5d6tEd4/?t=0) | [《脱口秀大会》第五季 · House](#逐字稿-前七分钟)　隔离前借的共享充电宝，到异地机场才还上。他算起充电的电费，再算自己在股市里亏掉的钱。本页收录前七分钟。 |
+
+</TranscriptPlayer>
 
 ## 逐字稿（前七分钟）
 

@@ -4,19 +4,17 @@ description: Gianmarco Soresi 的中英双语脱口秀专场，含 41:00–47:00
 
 # 快乐小偷 Thief of Joy
 
-<div class="video-embed">
-  <iframe
-    src="https://player.bilibili.com/player.html?bvid=BV13zCUBAEvb&danmaku=0&autoplay=0"
-    scrolling="no"
-    frameborder="0"
-    allowfullscreen
-    allow="fullscreen"
-  ></iframe>
-</div>
+<TranscriptPlayer platform="bilibili" video-id="BV13zCUBAEvb" title="快乐小偷 Thief of Joy">
 
-[去 B 站打开原视频](https://www.bilibili.com/video/BV13zCUBAEvb/)
+## 演出时间轴
 
-[跳到 41:00–47:00](#m41)
+| 原片时点 | 场次与内容 |
+| --- | --- |
+| [00:00](https://www.bilibili.com/video/BV13zCUBAEvb/?t=0) | [Gianmarco Soresi · 专场开场](#逐字稿)　他先问观众来自什么样的家庭，再把自己家的离婚经历摊开来讲。全文中英对照。 |
+| [41:00](https://www.bilibili.com/video/BV13zCUBAEvb/?t=2460) | [41:00–47:00 · 亲密关系](#m41)　同居以后，女友的夜惊让两个人都睡不好。接着他从情侣间的私事转到生育话题。 |
+| [47:00](https://www.bilibili.com/video/BV13zCUBAEvb/?t=2820) | [47:00 · 回到两个人的卧室](#m47)　接着上一段，他想在床边装一面镜子，弄清女友到底占了多少位置。 |
+
+</TranscriptPlayer>
 
 ## 逐字稿
 
@@ -2013,6 +2011,8 @@ ii wish i got on my back so she stopped trying to peg me all the fucking time
 <p>i can&#x27;t come on someone until i stop seeing them as a human being</p>
 
 </div>
+
+<span id="m47"></span>
 
 这太疯狂了，喜剧演员都会开性玩笑，不是我有啥怪癖
 it's crazy i you know i every comedian we we we would make sex jokes i'm not i'm not like a kinky guy

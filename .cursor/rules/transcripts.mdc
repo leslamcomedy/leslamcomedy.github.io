@@ -14,8 +14,8 @@ alwaysApply: true
 我是一个比较好信儿的人，就是我受不了别人挑衅我或者反问我。
 ```
 
-有视频时，标题下直接放播放器，随后是原视频链接和逐字稿。来源和说明放在逐字稿末尾。供搜索使用的简介写在 frontmatter 的 `description` 字段。
+有视频时，标题下直接放 `<TranscriptPlayer>`。播放器下的时间轴按实际演出分行，每行列原片时点、可跳到正文的场次名和一句内容摘要。合集里的片头、采访单列。只收录其中一场时，沿用整支原片的时间。来源和说明放在正文末尾。供搜索使用的简介写在 frontmatter 的 `description` 字段，分场导读另标 `format: 分场导读`。
 
-YouTube 用 `https://www.youtube.com/embed/ID?start=秒`。B 站用 `https://player.bilibili.com/player.html?bvid=BV...&danmaku=0&autoplay=0`。没有可靠链接时不要编一个。
+将有时点的内容放在播放器组件的开始和结束标签之间。时间写成 `[MM:SS](https://www.youtube.com/watch?v=ID&t=秒s)` 或 `[MM:SS](https://www.bilibili.com/video/BV号/?t=秒)`。已知的节目期数、赛段或剧场名可以用来区分演出，近似时点在页末说明。
 
 保留原稿用字，包括谐音和梗。不要写提取方式。

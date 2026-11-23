@@ -4,18 +4,15 @@ description: 卡姆讲军训和黑车司机。视频从 55 分 18 秒开始。
 
 # 卡姆：军训和黑车司机
 
-<div class="video-embed">
-  <iframe
-    src="https://www.youtube.com/embed/lTHVZ7eqbE0?start=3318"
-    title="YouTube video player"
-    scrolling="no"
-    frameborder="0"
-    allowfullscreen
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  ></iframe>
-</div>
+<TranscriptPlayer platform="youtube" video-id="lTHVZ7eqbE0" title="卡姆：军训和黑车司机" :start="3318">
 
-[去 YouTube 打开原视频](https://www.youtube.com/watch?v=lTHVZ7eqbE0&t=3318s)
+## 演出时间轴
+
+| 原片时点 | 场次与内容 |
+| --- | --- |
+| [55:18](https://www.youtube.com/watch?v=lTHVZ7eqbE0&t=3318s) | [卡姆 · 军训和黑车司机](#军训和黑车司机)　军训教官一开口就破音，北京地铁口的黑车司机也各有一套吆喝。卡姆用声音和身体把两群人搬上了台。 |
+
+</TranscriptPlayer>
 
 ## 军训和黑车司机
 

@@ -4,17 +4,15 @@ description: 邱瑞这段关于租房和钻石房。
 
 # 邱瑞：钻石房
 
-<div class="video-embed">
-  <iframe
-    src="https://player.bilibili.com/player.html?bvid=BV1SzgDeyESQ&danmaku=0&autoplay=0"
-    scrolling="no"
-    frameborder="0"
-    allowfullscreen
-    allow="fullscreen"
-  ></iframe>
-</div>
+<TranscriptPlayer platform="bilibili" video-id="BV1SzgDeyESQ" title="邱瑞：钻石房">
 
-[去 B 站打开原视频](https://www.bilibili.com/video/BV1SzgDeyESQ/)
+## 演出时间轴
+
+| 原片时点 | 场次与内容 |
+| --- | --- |
+| [00:00](https://www.bilibili.com/video/BV1SzgDeyESQ/?t=0) | [邱瑞 · 钻石房](#逐字稿)　在北京想租得离公司近一点，预算却只够奇怪户型。中介所谓的「钻石」，落到生活里就是很难站到马桶前面。 |
+
+</TranscriptPlayer>
 
 ## 逐字稿
 

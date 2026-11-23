@@ -4,18 +4,15 @@ description: 虾图脱口秀。
 
 # 刁鑫：吐槽亚麻 manager
 
-<div class="video-embed">
-  <iframe
-    src="https://www.youtube.com/embed/pzq0FNfyEKY"
-    title="YouTube video player"
-    scrolling="no"
-    frameborder="0"
-    allowfullscreen
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  ></iframe>
-</div>
+<TranscriptPlayer platform="youtube" video-id="pzq0FNfyEKY" title="刁鑫：吐槽亚麻 manager">
 
-[去 YouTube 打开原视频](https://www.youtube.com/watch?v=pzq0FNfyEKY)
+## 演出时间轴
+
+| 原片时点 | 场次与内容 |
+| --- | --- |
+| [00:00](https://www.youtube.com/watch?v=pzq0FNfyEKY&t=0s) | [虾图脱口秀 · 吐槽亚麻 manager](#逐字稿)　从主持人报幕进入演出。刁鑫讲经理怎样许诺升职、把开会当工作，又发现自己对老板的那套办法，家里的猫早就会了。 |
+
+</TranscriptPlayer>
 
 ## 逐字稿
 

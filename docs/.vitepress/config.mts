@@ -28,6 +28,7 @@ export default defineConfig({
         text: '文字稿',
         items: [
           { text: '全部文字稿', link: '/transcripts/' },
+          { text: '鸟鸟：脱口秀大会第五季合集', link: '/transcripts/niaoniao' },
           { text: 'House：我是交易的王者', link: '/transcripts/house' },
           { text: '快乐小偷 Thief of Joy', link: '/transcripts/thief-of-joy' },
           { text: '阿水：国外面试企业文化', link: '/transcripts/ashui' },

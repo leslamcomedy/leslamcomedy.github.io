@@ -48,7 +48,7 @@ function transcript(page: ContentData): Resource[] {
   const headings = [...src.matchAll(/^## (.+)$/gm)].map(match => match[1])
   return [{
     title, href: page.url, kind: '文字稿', platform: '站内阅读',
-    detail: '', keywords: [intro, ...headings, '逐字稿'].join(' '),
+    detail: page.frontmatter.format ?? '', keywords: [intro, ...headings, page.frontmatter.format ?? '逐字稿'].join(' '),
     source: original ? { label: `${platform(original)} 原片`, href: original } : undefined,
   }]
 }

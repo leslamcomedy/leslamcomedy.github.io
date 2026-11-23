@@ -72,7 +72,6 @@ export default defineConfig({
         link: 'https://www.xiaohongshu.com/search_result?keyword=%E6%85%95%E5%B0%BC%E9%BB%91%E4%B9%90%E5%92%94%E5%96%9C%E5%89%A7',
         ariaLabel: '小红书：慕尼黑乐咔喜剧',
       },
-      { icon: 'github', link: 'https://github.com/leslamcomedy/leslamcomedy.github.io' },
     ],
     search: {
       provider: 'local',

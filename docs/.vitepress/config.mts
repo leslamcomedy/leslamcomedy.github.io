@@ -65,10 +65,7 @@ export default defineConfig({
     socialLinks: [
       { icon: 'instagram', link: 'https://www.instagram.com/leslamcomedy/' },
       {
-        // 小红书没有内置图标，用自定义 SVG（书本造型 + RED 文字风格简化）
-        icon: {
-          svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5C3 4.12 4.12 3 5.5 3h13C19.88 3 21 4.12 21 5.5v13c0 1.38-1.12 2.5-2.5 2.5h-13C4.12 21 3 19.88 3 18.5v-13zM7.2 9.6l-1.6 4.8h1.5l.3-1h1.6l.3 1h1.5L9.2 9.6H7.2zm.9 1.5l.5 1.5h-1l.5-1.5zm4.1-1.5v4.8h1.4v-1.7h.9c1 0 1.7-.7 1.7-1.6s-.7-1.5-1.7-1.5h-2.3zm1.4 1.2h.8c.3 0 .5.2.5.4s-.2.4-.5.4h-.8v-.8zm4 -1.2v4.8h1.4V9.6h-1.4z"/></svg>',
-        },
+        icon: 'xiaohongshu',
         link: 'https://xhslink.cn/m/4ww6vasuImJ',
         ariaLabel: '小红书：慕尼黑乐咔喜剧',
       },

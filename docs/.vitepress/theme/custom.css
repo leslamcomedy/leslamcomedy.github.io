@@ -80,6 +80,15 @@
   color: #FFFFFF;
 }
 
+/* 红色底块留在社交图标原有的点击区域内。 */
+.VPSocialLink:has(> .vpi-social-xiaohongshu) {
+  --vp-c-text-1: #fff;
+  --vp-c-text-2: #fff;
+  border: 5px solid transparent;
+  border-radius: 11px;
+  background: #ff2442 padding-box;
+}
+
 .VPNavBarMenuLink.active,
 .VPNavBarMenuLink:hover {
   color: var(--vp-c-brand-1) !important;

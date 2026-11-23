@@ -4,28 +4,31 @@ sidebar: false
 aside: false
 title: 乐咔喜剧精选推荐
 description: 慕尼黑乐咔喜剧筛选推荐的演出、文字稿、视频、播客、书籍与创作手册。从乐咔的选择中，发现值得看、读、听的喜剧内容。
-recent:
-  - 单口喜剧进阶指南
-  - 单口喜剧表演手册 v1.1
-  - 不讲脱口秀的于师傅
+recommendedBooks:
+  - href: https://yes1am.github.io/stand-up-comedy/
+    note: 第一次上台前，先学写前提和包袱，准备好自己的第一段。
+  - href: https://weread.qq.com/web/bookDetail/13b32ff0811e7e4c5g018897
+    note: 开始跑开放麦后，跟着书里的练习写新段子，再带上台试。
+  - href: https://weread.qq.com/web/bookDetail/83432cc0813ab7406g014dbc
+    note: 演过几场后，挑一段熟悉的稿子，重新推敲铺垫和包袱。
 ---
 
 <script setup>
+import { useData } from 'vitepress'
 import ResourceDirectory from './components/ResourceDirectory.vue'
+import UpdateHistory from './components/UpdateHistory.vue'
+
+const { frontmatter } = useData()
 </script>
 
 <main>
-<ResourceDirectory />
-
-<details class="directory-updates" id="最新动态">
-<summary>更新记录</summary>
-
-更新时间为柏林时间。
+<ResourceDirectory :recommended-books="frontmatter.recommendedBooks" />
+<UpdateHistory :initial="frontmatter.updates">
 
 - **2026 年 11 月 22 日 19:23** · 新增[喜剧点评与创作解析](/comedy-channels)和[免费喜剧资料](/comedy-resources)，更新[书籍与手册](/books)
 - **2026 年 11 月 20 日 21:45** · 添加播客[《一言不合》：你就这么用开放麦啊？](https://www.xiaoyuzhoufm.com/episode/5eff02a46d76607427667101)
 - **2026 年 11 月 16 日 23:18** · 补充[邱瑞](/transcripts/qiurui)、[刁鑫](/transcripts/diaoxin)文字稿和[单立人视频合集](/danliren)
 - **2026 年 11 月 16 日 22:56** · 添加播客[《一言不合》：单口喜剧废料处理厂](https://www.xiaoyuzhoufm.com/episode/5e280fab418a84a0461fac4e)
 
-</details>
+</UpdateHistory>
 </main>

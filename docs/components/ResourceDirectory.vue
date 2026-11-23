@@ -4,6 +4,13 @@ import { withBase } from 'vitepress'
 import { data } from '../data/catalog.data'
 import { groups, kinds, type Kind } from '../data/catalogGroups'
 
+const props = defineProps<{ recommendedBooks: { href: string; note: string }[] }>()
+const readingList = computed(() => props.recommendedBooks.map(({ href, note }) => {
+  const book = data.find(item => item.kind === '书籍与手册' && item.href === href)
+  if (!book) throw new Error(`推荐书目缺少资料条目 ${href}`)
+  return { ...book, detail: note, source: undefined }
+}))
+
 const pageSize = 12
 const query = ref('')
 const kind = ref<Kind | ''>('')
@@ -43,16 +50,19 @@ const sectionLimit = computed(() => {
 })
 
 const shelves = computed(() => kinds.flatMap(key => {
-  const bookPreview = key === '书籍与手册' && !kind.value && !terms.value.length
-  const items = results.value.filter(item => item.kind === key && (!bookPreview || item.group === '书籍'))
+  if (key === '书籍与手册' && !kind.value && !terms.value.length) {
+    const items = readingList.value
+    return [{ kind: key, bookPreview: true, sections: [{ name: '书籍', count: items.length, items }] }]
+  }
+  const items = results.value.filter(item => item.kind === key)
   if (!items.length) return []
   const size = !kind.value && key === '喜剧点评与创作解析' ? pageSize : sectionLimit.value
   const names = new Set([...groups[key], ...items.map(item => item.group ?? '')])
   const sections = [...names].flatMap(name => {
     const matches = items.filter(item => (item.group ?? '') === name)
-    return matches.length ? [{ name, count: matches.length, items: matches.slice(0, bookPreview ? 3 : size) }] : []
+    return matches.length ? [{ name, count: matches.length, items: matches.slice(0, size) }] : []
   })
-  return [{ kind: key, sections, bookPreview }]
+  return [{ kind: key, sections, bookPreview: false }]
 }))
 
 function selectKind(key: Kind | '', name = '') {
@@ -146,15 +156,16 @@ function destination(href: string) {
       </div>
       <section v-for="shelf in shelves" :key="shelf.kind" class="shelf" :class="{ 'book-preview': shelf.bookPreview }" :aria-label="shelf.kind">
         <div class="shelf-heading">
-          <h3>{{ shelf.kind }}</h3>
+          <h3>{{ shelf.bookPreview ? '乐咔推荐的三本书' : shelf.kind }}</h3>
           <button v-if="shelf.bookPreview" type="button" class="see-all" @click="openSection(shelf.kind, '')">查看全部书籍与手册 <span aria-hidden="true">→</span></button>
         </div>
+        <p v-if="shelf.bookPreview" class="reading-order">书单按演出经验排列，从准备第一次开放麦，到演过几场后打磨旧稿。</p>
         <div v-for="section in shelf.sections" :key="section.name" class="resource-section">
           <div v-if="section.name && !shelf.bookPreview" class="group-heading">
             <h4>{{ section.name }}</h4>
             <span>{{ section.count }} 条</span>
           </div>
-          <ul class="resources" :class="{ 'book-grid': section.name === '书籍' }">
+          <component :is="shelf.bookPreview ? 'ol' : 'ul'" class="resources" :class="{ 'book-grid': section.name === '书籍' }">
             <li v-for="item in section.items" :key="item.href">
               <a class="entry" :href="destination(item.href)">
                 <img v-if="item.cover" :src="withBase(item.cover)" alt="" width="112" height="156" decoding="async" />
@@ -167,7 +178,7 @@ function destination(href: string) {
               </a>
               <a v-if="item.source" class="source" :href="item.source.href">{{ item.source.label }}</a>
             </li>
-          </ul>
+          </component>
           <button v-if="!shelf.bookPreview && section.count > section.items.length && !singleSection" class="see-all" type="button"
             :aria-label="`查看${section.name || shelf.kind}的全部 ${section.count} 条资料`"
             @click="openSection(shelf.kind, section.name)">查看全部 {{ section.count }} 条 <span aria-hidden="true">→</span></button>
@@ -237,11 +248,9 @@ function destination(href: string) {
 .book-grid img { display: block; width: 100%; height: clamp(138px, 15vw, 172px); padding: 8px; object-fit: contain; border-radius: 6px; background: var(--vp-c-bg-soft); }
 .book-grid .entry-title { font-size: 1rem; }
 .book-preview .book-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.book-preview img { height: clamp(94px, 26vw, 130px); }
-@media (min-width: 761px) {
-  .book-preview .entry { flex-direction: row; align-items: center; }
-  .book-preview img { flex: none; width: clamp(64px, 7vw, 86px); height: auto; padding: 0; }
-}
+.reading-order { margin: 10px 0 2px; color: var(--vp-c-text-2); font-size: .9375rem; }
+.book-preview .entry { flex-direction: row; align-items: flex-start; justify-content: space-between; }
+.book-preview img { order: 1; flex: none; width: clamp(48px, 5vw, 68px); height: auto; padding: 0; }
 .entry p { color: var(--vp-c-text-2); }
 .source, .contribute-link { color: var(--vp-c-brand-1); }
 .entry p { margin-top: 3px; font-size: .875rem; line-height: 1.5; }
@@ -257,6 +266,7 @@ function destination(href: string) {
   .directory { padding: 14px 16px 20px; }
   .resources { grid-template-columns: 1fr; }
   .book-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .book-preview .book-grid { grid-template-columns: 1fr; gap: 0; }
   .formats { gap: 6px; margin-top: 10px; }
   .formats button { padding-inline: 11px; }
   .directory-search { padding-left: 9px; gap: 6px; }

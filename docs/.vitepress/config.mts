@@ -1,4 +1,10 @@
+import { writeFile } from 'node:fs/promises'
+import { join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
+import { readUpdates } from '../data/updates'
+
+const updates = readUpdates(fileURLToPath(new URL('..', import.meta.url)))
 
 export default defineConfig({
   lang: 'zh-CN',
@@ -6,6 +12,12 @@ export default defineConfig({
   description: '慕尼黑乐咔喜剧筛选推荐的演出文字稿、视频、播客、书籍和创作手册。',
   base: '/',
   ignoreDeadLinks: true,
+  transformPageData(page) {
+    if (page.relativePath === 'index.md') page.frontmatter.updates = updates
+  },
+  async buildEnd({ outDir }) {
+    await writeFile(join(outDir, 'updates.json'), JSON.stringify(updates))
+  },
   // 保留「一句一行」的原文排版（锐锐、高寒等字幕稿是单换行，不加这个会合并成一段）
   markdown: {
     breaks: true,

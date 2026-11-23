@@ -6,11 +6,9 @@ title: 乐咔喜剧精选推荐
 description: 慕尼黑乐咔喜剧筛选推荐的演出、文字稿、视频、播客、书籍与创作手册。从乐咔的选择中，发现值得看、读、听的喜剧内容。
 recommendedBooks:
   - href: https://yes1am.github.io/stand-up-comedy/
-    note: 第一次上台前，先学写前提和包袱，准备好自己的第一段。
+    cover: /book-covers/handbook-v1.1.png
   - href: https://weread.qq.com/web/bookDetail/13b32ff0811e7e4c5g018897
-    note: 开始跑开放麦后，跟着书里的练习写新段子，再带上台试。
   - href: https://weread.qq.com/web/bookDetail/83432cc0813ab7406g014dbc
-    note: 演过几场后，挑一段熟悉的稿子，重新推敲铺垫和包袱。
 ---
 
 <script setup>

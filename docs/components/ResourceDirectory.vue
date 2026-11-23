@@ -4,11 +4,11 @@ import { withBase } from 'vitepress'
 import { data } from '../data/catalog.data'
 import { groups, kinds, type Kind } from '../data/catalogGroups'
 
-const props = defineProps<{ recommendedBooks: { href: string; note: string }[] }>()
-const readingList = computed(() => props.recommendedBooks.map(({ href, note }) => {
+const props = defineProps<{ recommendedBooks: { href: string; cover?: string }[] }>()
+const readingList = computed(() => props.recommendedBooks.map(({ href, cover }) => {
   const book = data.find(item => item.kind === '书籍与手册' && item.href === href)
   if (!book) throw new Error(`推荐书目缺少资料条目 ${href}`)
-  return { ...book, detail: note, source: undefined }
+  return { ...book, cover: cover ?? book.cover }
 }))
 
 const pageSize = 12
@@ -156,10 +156,9 @@ function destination(href: string) {
       </div>
       <section v-for="shelf in shelves" :key="shelf.kind" class="shelf" :class="{ 'book-preview': shelf.bookPreview }" :aria-label="shelf.kind">
         <div class="shelf-heading">
-          <h3>{{ shelf.bookPreview ? '乐咔推荐的三本书' : shelf.kind }}</h3>
-          <button v-if="shelf.bookPreview" type="button" class="see-all" @click="openSection(shelf.kind, '')">查看全部书籍与手册 <span aria-hidden="true">→</span></button>
+          <h3>{{ shelf.bookPreview ? '乐咔荐书 · 从入门到进阶' : shelf.kind }}</h3>
+          <button v-if="shelf.bookPreview" type="button" class="see-all" aria-label="查看全部书籍与手册" @click="openSection(shelf.kind, '')">全部书目</button>
         </div>
-        <p v-if="shelf.bookPreview" class="reading-order">书单按演出经验排列，从准备第一次开放麦，到演过几场后打磨旧稿。</p>
         <div v-for="section in shelf.sections" :key="section.name" class="resource-section">
           <div v-if="section.name && !shelf.bookPreview" class="group-heading">
             <h4>{{ section.name }}</h4>
@@ -172,11 +171,13 @@ function destination(href: string) {
                 <div class="entry-info">
                   <span v-if="item.podcastLabel" class="podcast-label">{{ item.podcastLabel }}</span>
                   <span class="entry-title resource-link-title">{{ item.title }}</span>
-                  <p v-if="item.detail">{{ item.detail }}</p>
-                  <span class="metadata">{{ item.platform }}</span>
+                  <template v-if="!shelf.bookPreview">
+                    <p v-if="item.detail">{{ item.detail }}</p>
+                    <span class="metadata">{{ item.platform }}</span>
+                  </template>
                 </div>
               </a>
-              <a v-if="item.source" class="source" :href="item.source.href">{{ item.source.label }}</a>
+              <a v-if="!shelf.bookPreview && item.source" class="source" :href="item.source.href">{{ item.source.label }}</a>
             </li>
           </component>
           <button v-if="!shelf.bookPreview && section.count > section.items.length && !singleSection" class="see-all" type="button"
@@ -247,10 +248,15 @@ function destination(href: string) {
 .book-grid .entry { flex-direction: column; justify-content: flex-start; gap: 10px; }
 .book-grid img { display: block; width: 100%; height: clamp(138px, 15vw, 172px); padding: 8px; object-fit: contain; border-radius: 6px; background: var(--vp-c-bg-soft); }
 .book-grid .entry-title { font-size: 1rem; }
-.book-preview .book-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.reading-order { margin: 10px 0 2px; color: var(--vp-c-text-2); font-size: .9375rem; }
-.book-preview .entry { flex-direction: row; align-items: flex-start; justify-content: space-between; }
-.book-preview img { order: 1; flex: none; width: clamp(48px, 5vw, 68px); height: auto; padding: 0; }
+.book-preview { margin: 8px 0 16px; }
+.book-preview .shelf-heading { padding-bottom: 3px; }
+.book-preview .shelf-heading h3 { font-size: 1.0625rem; }
+.book-preview .see-all { min-height: 32px; }
+.book-preview .book-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(6px, 2vw, 20px); }
+.book-preview li { padding-bottom: 0; }
+.book-preview .entry { flex-direction: row; align-items: center; justify-content: flex-start; gap: 8px; min-height: 0; padding: 6px 0; }
+.book-preview img { flex: none; width: 46px; height: 62px; padding: 0; border-radius: 2px; background: transparent; }
+.book-preview .entry-title { font-size: .9375rem; line-height: 1.35; }
 .entry p { color: var(--vp-c-text-2); }
 .source, .contribute-link { color: var(--vp-c-brand-1); }
 .entry p { margin-top: 3px; font-size: .875rem; line-height: 1.5; }
@@ -266,11 +272,15 @@ function destination(href: string) {
   .directory { padding: 14px 16px 20px; }
   .resources { grid-template-columns: 1fr; }
   .book-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .book-preview .book-grid { grid-template-columns: 1fr; gap: 0; }
   .formats { gap: 6px; margin-top: 10px; }
   .formats button { padding-inline: 11px; }
   .directory-search { padding-left: 9px; gap: 6px; }
   .directory-search button { padding-inline: 13px; }
+}
+@media (max-width: 600px) {
+  .book-preview .entry { flex-direction: column; gap: 4px; text-align: center; }
+  .book-preview img { width: 42px; height: 56px; }
+  .book-preview .entry-title { font-size: .875rem; }
 }
 @media (max-width: 520px) {
   .book-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }

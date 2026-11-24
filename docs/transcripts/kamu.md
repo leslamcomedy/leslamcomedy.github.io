@@ -14,8 +14,6 @@ description: 卡姆讲军训和黑车司机。视频从 55 分 18 秒开始。
 
 </template>
 
-</TranscriptPlayer>
-
 ## 军训和黑车司机
 
 我觉得军训这事特别搞笑
@@ -140,6 +138,8 @@ description: 卡姆讲军训和黑车司机。视频从 55 分 18 秒开始。
 刚刚好从来不随便露点
 整个在最重要的时候
 差一点
+
+</TranscriptPlayer>
 
 > 来源: [YouTube，从 55:18 开始](https://www.youtube.com/watch?v=lTHVZ7eqbE0&t=3318s)
 > 说明: 播放器从 55 分 18 秒起播。已按语义断句，并修正明显错字。

@@ -14,10 +14,6 @@ description: 《喜剧之王单口季2》。阿水讲在国外面试，以及怎
 
 </template>
 
-</TranscriptPlayer>
-
-延伸收听：[破壁圆桌对谈阿水（小宇宙）](https://www.xiaoyuzhoufm.com/episode/69ed2c001d989496e781de65)
-
 ## 逐字稿
 
 大家好，我叫阿水
@@ -213,6 +209,10 @@ I'm a future maker
 
 谢谢大家
 我是阿水
+
+</TranscriptPlayer>
+
+延伸收听：[破壁圆桌对谈阿水（小宇宙）](https://www.xiaoyuzhoufm.com/episode/69ed2c001d989496e781de65)
 
 > 来源: [YouTube](https://youtu.be/MgF-ZJ8xxeM)
 > 说明: 纯享单篇。已按语义断句，并修正明显错字。

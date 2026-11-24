@@ -14,8 +14,6 @@ description: 《脱口秀大会》第五季。House 从共享充电宝讲到炒�
 
 </template>
 
-</TranscriptPlayer>
-
 ## 逐字稿（前七分钟）
 
 我讨厌比赛
@@ -205,6 +203,8 @@ description: 《脱口秀大会》第五季。House 从共享充电宝讲到炒�
 谢谢大家
 
 我是爱上班的 House
+
+</TranscriptPlayer>
 
 > 来源: [B 站 BV1qe5d6tEd4](https://www.bilibili.com/video/BV1qe5d6tEd4/)
 > 说明: 已按语义断句，并修正明显谐音。专有名词和数字仍可能有个别错字。

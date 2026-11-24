@@ -16,8 +16,6 @@ description: Gianmarco Soresi 的中英双语脱口秀专场，含 41:00–47:00
 
 </template>
 
-</TranscriptPlayer>
-
 ## 逐字稿
 
 我来自一个糟糕的家庭
@@ -2831,6 +2829,8 @@ RYAN HANDELSMAN
 COURTNEY TAYLOR
 KAT VALENTINE
 MADDIE WIENER
+
+</TranscriptPlayer>
 
 > 来源: [B 站 BV13zCUBAEvb](https://www.bilibili.com/video/BV13zCUBAEvb/)
 > 说明: 软字幕需要登录才能下载，这份是从画面字幕识别的。英文行可能有个别错字。

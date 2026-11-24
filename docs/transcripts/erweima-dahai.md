@@ -14,8 +14,6 @@ description: 单立人原创喜剧大赛 2021 夏。视频从 22 分 50 秒开�
 
 </template>
 
-</TranscriptPlayer>
-
 ## 逐字稿
 
 常差的演员，我的父亲总企图在我身上展示他父权的尊严。
@@ -117,6 +115,8 @@ description: 单立人原创喜剧大赛 2021 夏。视频从 22 分 50 秒开�
 对他光顾着为我好了，忘了体会自己的快乐。
 
 谢谢大家，我是二维马。
+
+</TranscriptPlayer>
 
 > 来源: [YouTube，从 22:50 开始](https://www.youtube.com/watch?v=tl_UGQIGELE&t=1370s)
 > 说明: 播放器从 22 分 50 秒起播。

@@ -14,8 +14,6 @@ description: 虾图脱口秀。
 
 </template>
 
-</TranscriptPlayer>
-
 ## 逐字稿
 
 大家好，我是刘鑫，
@@ -103,6 +101,8 @@ description: 虾图脱口秀。
 要是这也做不到，那欢迎加入我们俱乐部，我们一起写段子喷死他，
 每个人都可以讲五分钟脱口秀，你一个人五分钟，我们这十几个人那就是一个多小时啊。
 谢谢
+
+</TranscriptPlayer>
 
 > 来源: [YouTube](https://www.youtube.com/watch?v=pzq0FNfyEKY)
 > 说明: 播放整段。
